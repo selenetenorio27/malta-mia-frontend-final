@@ -20,7 +20,7 @@ function App() {
     axios
     .get('https://malta-mia-api.onrender.com/cervezas')
     .then((response) => response.json())
-    .then((data) => setBeerInventory(data))
+    .then((response) => setBeerInventory(response.data))
     .catch((error) => console.error('Error fecthing beer inventory:', error));
   }, []);
 
@@ -37,7 +37,7 @@ function App() {
         <Routes>
         <Route exact path="/" element={<Inicio />} />
         <Route path="/acerca-de" element={<AcercaDe />} />
-        <Route path="/encuesta" element={<Encuesta onRecomendacion={handleRecomendacion} beerInventory={beerInventory} />}/>
+        <Route path="/encuesta" element={<Encuesta handleSurveySubmit={handleRecomendacion} beerInventory={beerInventory} />}/>
         <Route path="/nuestros-productos" element={<NuestrosProductos />} />
           </Routes>
           {mostrarRecomendacion && recomendacionCerveza && (

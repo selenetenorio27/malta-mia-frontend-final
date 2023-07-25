@@ -5,7 +5,7 @@ const Encuesta = ({ handleSurveySubmit, beerInventory }) => {
   const { t } = useTranslation();
 
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [hasTriedCraftBeer, setHasTriedCraftBeer] = useState(null);
+  const [hasTriedCraftBeer, setHasTriedCraftBeer] = useState('No');
   const [beerStyle, setBeerStyle] = useState(null);
   const [ibuPreference, setIbuPreference] = useState(null);
   const [flavorPreference, setFlavorPreference] = useState(null);
