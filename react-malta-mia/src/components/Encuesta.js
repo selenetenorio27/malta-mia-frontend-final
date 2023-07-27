@@ -1,156 +1,151 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect } from 'react';
 
-const Encuesta = ({ handleSurveySubmit, beerInventory }) => {
-  const { t } = useTranslation();
+const Encuesta = ({ onSubmit }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [respuestas, setRespuestas] = useState({
+    hasTriedCraftBeer: null,
+    beerStyle: '',
+    ibuPreference: '',
+    flavorPreference: '',
+    alcoholPreference: '',
+    additionalIngredientPreference: '',
+  });
+  const [encuestaCompletada, setEncuestaCompletada] = useState(false);
 
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [hasTriedCraftBeer, setHasTriedCraftBeer] = useState('No');
-  const [beerStyle, setBeerStyle] = useState(null);
-  const [ibuPreference, setIbuPreference] = useState(null);
-  const [flavorPreference, setFlavorPreference] = useState(null);
-  const [alcoholPreference, setAlcoholPreference] = useState(null);
-  const [additionalIngredient, setAdditionalIngredient] = useState(null);
-
-  const questions = [
+  const preguntas = [
     {
-      id: 1,
-      question: t('survey.question1'),
-      options: [t('survey.optionYes'), t('survey.optionNo')],
-      state: hasTriedCraftBeer,
-      setState: setHasTriedCraftBeer,
+      id: 'hasTriedCraftBeer',
+      texto: '1. ¿Ya has probado alguna cerveza artesanal?',
+      opciones: ['si', 'no'],
     },
     {
-      id: 2,
-      question: t('survey.question2'),
-      options: [t('survey.optionLager'), t('survey.optionWheat'), 
-      t('survey.optionIPA'), t('survey.optionStout'), t('survey.optionPilsner'), 
-      t('survey.optionDunkel'), t('survey.optionRedAle'), t('survey.optionPaleAle'), 
-      t('survey.optionLagerFrutal'), t('survey.optionBrownAle'), t('survey.optionAmberAle'), 
-      t('survey.optionPorter'), t('survey.optionImperialCacaoStout'), t('survey.optionImperialCoffeeStout'), t('survey.optionExperimentar')],
-      state: beerStyle,
-      setState: setBeerStyle,
+      id: 'beerStyle',
+      texto: '2. ¿Qué tipo de estilo de cerveza te gusta?',
+      opciones: [
+        'lager',
+        'wheat ale',
+        'ipa',
+        'stout',
+        'pilsner',
+        'dunkel',
+        'red ale',
+        'pale ale',
+        'lager frutal',
+        'brown ale',
+        'amberale',
+        'porter',
+        'imperial cacao stout',
+        'imperial coffee stout',
+      ],
     },
     {
-      id: 3,
-      question:  t('survey.question3'),
-      options: [t('survey.optionLow'), t('survey.optionMedium'), t('survey.optionHigh')],
-      state: ibuPreference,
-      setState: setIbuPreference,
+      id: 'ibuPreference',
+      texto: '3. ¿Qué nivel de amargura o IBUs te gusta en una cerveza artesanal?',
+      opciones: ['baja (entre 8 y 20)', 'media (entre 21 y 50)', 'alta (mayor a 51)'],
     },
     {
-      id: 4,
-      question: t('survey.question4'),
-      options: [t('survey.optionFrutal'), t('survey.optionCaramelo'), t('survey.optionTostado'), 
-      t('survey.optionAhumado'), t('survey.optionLigero'), t('survey.optionCitrico'), t('survey.optionAmargoIntenso')],
-      state: flavorPreference,
-      setState: setFlavorPreference,
+      id: 'flavorPreference',
+      texto: '4. ¿Qué tipo de sabores prefieres en una cerveza artesanal?',
+      opciones: ['Frutal y dulce', 'caramelo', 'tostado', 'ahumado', 'Ligero y refrescante', 'citrico', 'amargo intenso'],
     },
     {
-      question: t('survey.question5'),
-      options: [t('survey.optionAlcoholLow'), t('survey.optionAlcoholMedium'), t('survey.optionAlcoholHigh')],
-      state: alcoholPreference,
-      setState: setAlcoholPreference,
+      id: 'alcoholPreference',
+      texto: '5. ¿Cuál es tu preferencia de nivel de alcohol?',
+      opciones: ['Bajo (menos del 4%)', 'Moderado (entre 4% y 6%)', 'Alto (mayor a 6.5%)'],
     },
     {
-      question: t('survey.question6'),
-      options: [t('survey.optionFrutas'), t('survey.optionChocolate'), t('survey.optionCafe'), 
-      t('survey.optionCaram'), t('survey.optionPeanutButter'), t('survey.optionSinIngredientes'), t('survey.optionIndiferente')],
-      state: additionalIngredient,
-      setState: setAdditionalIngredient,
+      id: 'additionalIngredientPreference',
+      texto: '6. ¿Te gustaría que tu cerveza tuviera algún ingrediente adicional?',
+      opciones: ['frutas', 'chocolate', 'cafe', 'caramelo', 'mantequilla de mani', 'ninguno', 'me es indiferente'],
     },
   ];
 
+  useEffect(() => {
+    // Al cargar el componente, mostramos automáticamente la pregunta 1.
+    setCurrentPage(0);
+    setEncuestaCompletada(false);
+  }, []);
 
-  const handleNextQuestion = () => {
-    if (questionIndex < questions.length - 1) {
-      if (questionIndex === 0 && hasTriedCraftBeer === 'No') {
-        // Si el usuario respondió "no" a la pregunta 1, saltar a la pregunta 3
-        setQuestionIndex(2);
-      } else {
-        setQuestionIndex(questionIndex + 1);
+  const handleNextClick = () => {
+    setCurrentPage((prevPage) => {
+      // Si el usuario contestó "No" en la pregunta 1, saltar a la pregunta 3 directamente.
+      if (prevPage === 0 && respuestas.hasTriedCraftBeer === 'no') {
+        return prevPage + 2;
       }
-    }
-  };
-
-  const handlePreviousQuestion = () => {
-    if (questionIndex > 0) {
-      setQuestionIndex(questionIndex - 1);
-    }
-  };
-
-  const handleSurveySubmission = () => {
-    // Aquí puedes realizar la lógica de validación de las respuestas si es necesario
-
-    // Pasar las respuestas de la encuesta al componente padre (App) para su procesamiento
-    handleSurveySubmit({
-      hasTriedCraftBeer,
-      beerStyle,
-      ibuPreference,
-      flavorPreference,
-      alcoholPreference,
-      additionalIngredient,
+      return prevPage + 1;
     });
   };
 
-
-  const currentQuestion = questions[questionIndex];
-
-  const recommendBeer = () => {
-    const selectedBeers = beerInventory.filter((beer) => {
-      const ibu = beer.ibus;
-      const alcohol = beer.porcentaje_alcohol;
-      const flavor = beer.sabor.toLowerCase();
-      const additionalIngredientMatch =
-        additionalIngredient === 'ninguno'
-          ? beer.ingrediente_adicional === 'ninguno'
-          : beer.ingrediente_adicional.includes(additionalIngredient);
-
-      return (
-        beerStyle === beer.estilo &&
-        ((ibuPreference === 'baja' && ibu >= 8 && ibu <= 20) ||
-          (ibuPreference === 'media' && ibu >= 21 && ibu <= 50) ||
-          (ibuPreference === 'alta' && ibu > 50)) &&
-        flavor.includes(flavorPreference.toLowerCase()) &&
-        ((alcoholPreference === 'Bajo' && alcohol < 4) ||
-          (alcoholPreference === 'Moderado' && alcohol >= 4 && alcohol <= 6) ||
-          (alcoholPreference === 'Alto' && alcohol > 6.5)) &&
-        additionalIngredientMatch
-      );
-    });
-
-    return selectedBeers;
+  const handlePreviousClick = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
   };
+
+  const handleInputChange = (preguntaId, value) => {
+    setRespuestas((prevRespuestas) => ({
+      ...prevRespuestas,
+      [preguntaId]: value,
+    }));
+  };
+
+  const handleEncuestaSubmit = () => {
+    onSubmit(respuestas);
+    setEncuestaCompletada(true);
+  };
+
+  const handleRestartEncuesta = () => {
+    setCurrentPage(0);
+    setRespuestas({
+      hasTriedCraftBeer: null,
+      beerStyle: '',
+      ibuPreference: '',
+      flavorPreference: '',
+      alcoholPreference: '',
+      additionalIngredientPreference: '',
+    });
+    setEncuestaCompletada(false);
+  };
+
+  const preguntaActual = preguntas[currentPage];
 
   return (
     <div>
-      {currentQuestion && (
-        <>
-          <h2>{currentQuestion.question}</h2>
-          <div>
-            {currentQuestion.options.map((option) => (
-              <label key={option}>
-                <input
-                  type="radio"
-                  value={option}
-                  checked={currentQuestion.state === option}
-                  onChange={() => currentQuestion.setState(option)}
-                />
-                {option}
-              </label>
+      <h2>Encuesta</h2>
+      {/* Mostrar la pregunta actual si la encuesta no está completada */}
+      {!encuestaCompletada && preguntaActual && (
+        <div key={preguntaActual.id}>
+          <p>{preguntaActual.texto}</p>
+          <ul>
+            {preguntaActual.opciones.map((opcion) => (
+              <li key={opcion}>
+                <label>
+                  <input
+                    type="radio"
+                    name={preguntaActual.id}
+                    value={opcion}
+                    checked={respuestas[preguntaActual.id] === opcion}
+                    onChange={(e) => handleInputChange(preguntaActual.id, e.target.value)}
+                  />
+                  {opcion}
+                </label>
+              </li>
             ))}
-          </div>
-          {questionIndex > 0 && (
-            <button onClick={handlePreviousQuestion}>Anterior</button>
+          </ul>
+          <button disabled={currentPage === 0} onClick={handlePreviousClick}>
+            Anterior
+          </button>
+          {currentPage < preguntas.length - 1 ? (
+            <button onClick={handleNextClick}>Siguiente</button>
+          ) : (
+            <button onClick={handleEncuestaSubmit}>Enviar encuesta</button>
           )}
-          {questionIndex < questions.length - 1 && (
-            <button onClick={handleNextQuestion}>Siguiente</button>
-          )}
-          {questionIndex === questions.length - 1 && (
-            // Si es la última pregunta, mostrar el botón para enviar la encuesta
-            <button onClick={handleSurveySubmission}>Enviar Encuesta</button>
-          )}
-        </>
+        </div>
+      )}
+
+      {encuestaCompletada && (
+        <div>
+          <p>¡Gracias por completar la encuesta!</p>
+          <button onClick={handleRestartEncuesta}>Volver a contestar Encuesta</button>
+        </div>
       )}
     </div>
   );

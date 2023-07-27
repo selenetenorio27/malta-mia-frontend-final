@@ -11,43 +11,41 @@ import axios from 'axios';
 
 import './App.css'
 
-function App() {
-  const [mostrarRecomendacion, setMostrarRecomendacion] = useState(false);
-  const [recomendacionCerveza, setRecomendacionCerveza] = useState(null);
-  const [beerInventory, setBeerInventory] = useState([]);
+const App= () => {
+  const [encuestaRespuestas, setEncuestaRespuestas] = useState(null);
 
-  useEffect(() => {
-    axios
-    .get('https://malta-mia-api.onrender.com/cervezas')
-    .then((response) => response.json())
-    .then((response) => setBeerInventory(response.data))
-    .catch((error) => console.error('Error fecthing beer inventory:', error));
-  }, []);
 
-  const handleRecomendacion = (cervezaRecomendada) => {
-    setMostrarRecomendacion(true);
-    setRecomendacionCerveza(cervezaRecomendada);
+
+  // useEffect(() => {
+  //   axios
+  //   .get('https://malta-mia-api.onrender.com/cervezas')
+  //   .then((response) => setBeerInventory(response.data))
+  //   .catch((error) => console.error('Error fecthing beer inventory:', error));
+  // }, []);
+
+  const handleEncuestaSubmit = (respuestas) => {
+    setEncuestaRespuestas(respuestas);
   };
+  
 
   return (
     <Router>
-      <I18nextProvider i18n={i18n}>
       <div>
         <NavigationBar />
         <Routes>
-        <Route exact path="/" element={<Inicio />} />
-        <Route path="/acerca-de" element={<AcercaDe />} />
-        <Route path="/encuesta" element={<Encuesta handleSurveySubmit={handleRecomendacion} beerInventory={beerInventory} />}/>
-        <Route path="/nuestros-productos" element={<NuestrosProductos />} />
-          </Routes>
-          {mostrarRecomendacion && recomendacionCerveza && (
-            <Recomendacion cervezaRecomendada={recomendacionCerveza} />
-          )}
-        </div>
-      </I18nextProvider>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/acerca-de" element={<AcercaDe />} />
+          <Route
+            path="/encuesta"
+            element={<Encuesta onSubmit={handleEncuestaSubmit} />}
+          />
+          <Route path="/nuestros-productos" element={<NuestrosProductos />} />
+        </Routes>
+          <Recomendacion encuestaRespuestas={encuestaRespuestas} />
+      </div>
     </Router>
   );
-}
+};
 
 const Inicio = () => {
   return (
