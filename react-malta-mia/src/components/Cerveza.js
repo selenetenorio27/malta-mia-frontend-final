@@ -1,7 +1,7 @@
 
 const beersData = [
     {id:1, nombre:'Dark Lager', marca:'Principia',porcentaje_alcohol:4.0, estilo:'lager', ibus:22, color:'obscura', sabor:['caramelo','tostado'], ingrediente_adicional:'cafe'},
-    {id:2, nombre:'American Wheat Ale', marca:'Principia',porcentaje_alcohol:4.3, estilo:'wheat ale', ibus:18, color:'clara', sabor:'Ligero y refrescante', ingrediente_adicional:'ninguno'},
+    {id:2, nombre:'American Wheat Ale', marca:'Principia',porcentaje_alcohol:4.3, estilo:'wheat ale', ibus:18, color:'clara', sabor:'ligero y refrescante', ingrediente_adicional:'ninguno'},
     {id:3, nombre:'Extrasolar', marca:'Principia',porcentaje_alcohol:6.5, estilo:'ipa', ibus:30, color:'clara turbia', sabor:'frutal y dulce', ingrediente_adicional:'frutas'},
     {id:4, nombre:'Spectra', marca:'Principia',porcentaje_alcohol:6.7, estilo:'ipa', ibus:60, color:'clara dorada', sabor:'citrico', ingrediente_adicional:'ninguno'},
     {id:5, nombre:'Asimetria', marca:'Principia',porcentaje_alcohol:5.5, estilo:'stout', ibus:20, color:'obscura', sabor:['caramelo','tostado'], ingrediente_adicional:'mantequilla de mani'},

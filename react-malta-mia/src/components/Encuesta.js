@@ -46,7 +46,7 @@ const Encuesta = ({ onSubmit }) => {
     {
       id: 'flavorPreference',
       texto: '4. ¿Qué tipo de sabores prefieres en una cerveza artesanal?',
-      opciones: ['Frutal y dulce', 'caramelo', 'tostado', 'ahumado', 'Ligero y refrescante', 'citrico', 'amargo intenso'],
+      opciones: ['Frutal y dulce', 'caramelo', 'tostado', 'ahumado', 'ligero y refrescante', 'citrico', 'amargo intenso'],
     },
     {
       id: 'alcoholPreference',

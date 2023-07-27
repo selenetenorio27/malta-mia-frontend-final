@@ -23,7 +23,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
       "marca": "Principia",
       "nombre": "American Wheat Ale",
       "porcentaje_alcohol": 4.3,
-      "sabor": "Ligero y refrescante"
+      "sabor": "ligero y refrescante"
     },
     {
       "cerveza_id": 3,
@@ -34,7 +34,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
       "marca": "Principia",
       "nombre": "Extrasolar",
       "porcentaje_alcohol": 6.5,
-      "sabor": "Frutal y dulce"
+      "sabor": "frutal y dulce"
     }
     // Aquí podrías agregar más cervezas al inventario
   ];
