@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+
 const Encuesta = ({ onSubmit }) => {
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [respuestas, setRespuestas] = useState({
     hasTriedCraftBeer: null,

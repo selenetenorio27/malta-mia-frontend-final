@@ -34,7 +34,17 @@ const Recomendacion = ({ encuestaRespuestas }) => {
       "nombre": "Extrasolar",
       "porcentaje_alcohol": 6.5,
       "sabor": "frutal y dulce"
-    }
+    }, {
+      "cerveza_id": 4,
+      "color": "obscura",
+      "estilo": "stout",
+      "ibus": 38,
+      "ingrediente_adicional": ["cafe","chocolate"],
+      "marca": "Wendlandt",
+      "nombre": "Foca parlante",
+      "porcentaje_alcohol": 5.5,
+      "sabor": "tostado"
+  }
     // Aquí podrías agregar más cervezas al inventario
   ];
 
@@ -73,7 +83,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
     // Filtrar por ingrediente adicional según respuesta a la pregunta 6
     if (encuestaRespuestas.additionalIngredientPreference !== 'ninguno') {
-      cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ingrediente_adicional === encuestaRespuestas.additionalIngredientPreference);
+      cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ingrediente_adicional.includes(encuestaRespuestas.additionalIngredientPreference));
     }
 
     // Verificar si se encontraron cervezas que cumplan con todos los filtros
@@ -107,7 +117,14 @@ const Recomendacion = ({ encuestaRespuestas }) => {
                     : cerveza.sabor[0]
                   : cerveza.sabor}
               </p>
-              <p>Ingredientes adicionales: {cerveza.ingrediente_adicional}</p>
+              <p>
+                Ingredientes adicionales:{' '}
+                {Array.isArray(cerveza.sabor)
+                  ? cerveza.sabor.length > 1
+                    ? cerveza.sabor.join(', ')
+                    : cerveza.sabor[0]
+                  : cerveza.sabor}
+              </p>
             </li>
           ))}
         </ul>
