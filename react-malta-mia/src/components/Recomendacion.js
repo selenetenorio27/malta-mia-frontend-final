@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Recomendacion = ({ encuestaRespuestas }) => {
@@ -61,7 +60,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
     }
 
     // Filtrar por sabor según respuesta a la pregunta 4
-    cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.sabor === encuestaRespuestas.flavorPreference);
+    cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.sabor.includes(encuestaRespuestas.flavorPreference));
 
     // Filtrar por nivel de alcohol según respuesta a la pregunta 5
     if (encuestaRespuestas.alcoholPreference === 'Bajo (menos del 4%)') {
@@ -100,7 +99,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
               <p>Estilo: {cerveza.estilo}</p>
               <p>IBU: {cerveza.ibus}</p>
               <p>Porcentaje de alcohol: {cerveza.porcentaje_alcohol}</p>
-              <p>Sabor: {cerveza.sabor}</p>
+              <p>Sabor: {cerveza.sabor.join(', ')}</p>
               <p>Ingredientes adicionales: {cerveza.ingrediente_adicional}</p>
             </li>
           ))}
