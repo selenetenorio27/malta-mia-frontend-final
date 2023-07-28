@@ -13,6 +13,7 @@ import './App.css'
 
 const App= () => {
   const [encuestaRespuestas, setEncuestaRespuestas] = useState(null);
+  const [mostrarRecomendacion, setMostrarRecomendacion] = useState(false);
 
 
 
@@ -25,6 +26,12 @@ const App= () => {
 
   const handleEncuestaSubmit = (respuestas) => {
     setEncuestaRespuestas(respuestas);
+    setMostrarRecomendacion(true);
+  };
+
+  const handleRestartEncuesta = () => {
+    setMostrarRecomendacion(false);
+    setEncuestaRespuestas(null);
   };
   
 
@@ -37,11 +44,19 @@ const App= () => {
           <Route path="/acerca-de" element={<AcercaDe />} />
           <Route
             path="/encuesta"
-            element={<Encuesta onSubmit={handleEncuestaSubmit} />}
+            element={
+              <Encuesta
+                onSubmit={handleEncuestaSubmit}
+                onRestart={handleRestartEncuesta}
+                encuestaRespuestas={encuestaRespuestas}
+              />
+            }
           />
           <Route path="/nuestros-productos" element={<NuestrosProductos />} />
         </Routes>
+        {mostrarRecomendacion && (
           <Recomendacion encuestaRespuestas={encuestaRespuestas} />
+        )}
       </div>
     </Router>
   );

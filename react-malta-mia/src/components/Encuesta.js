@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Encuesta = ({ onSubmit }) => {
+const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const { t } = useTranslation();
   
   const [currentPage, setCurrentPage] = useState(1);
@@ -97,6 +97,7 @@ const Encuesta = ({ onSubmit }) => {
       additionalIngredientPreference: '',
     });
     setEncuestaCompletada(false);
+    onRestart();
   };
 
   const preguntaActual = preguntas[currentPage];
