@@ -12,14 +12,14 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
     if (encuestaRespuestas.hasTriedCraftBeer === 'no') {
       // Filtrar por IBU según respuesta a la pregunta 3
-      if (encuestaRespuestas.ibuPreference === 'Baja (entre 8 y 20)') {
+      if (encuestaRespuestas.ibuPreference === 'low') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 8 && cerveza.ibus <= 20);
-      } else if (encuestaRespuestas.ibuPreference === 'Media (entre 21 y 50)') {
+      } else if (encuestaRespuestas.ibuPreference === 'medium') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 20 && cerveza.ibus <= 50);
-      } else if (encuestaRespuestas.ibuPreference === 'Alta (mayor a 51)') {
+      } else if (encuestaRespuestas.ibuPreference === 'high') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 50);
       }
-    } else if (encuestaRespuestas.hasTriedCraftBeer === 'si') {
+    } else if (encuestaRespuestas.hasTriedCraftBeer === 'yes') {
       // Filtrar por estilo según respuesta a la pregunta 2
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.estilo === encuestaRespuestas.beerStyle);
     }
@@ -28,16 +28,15 @@ const Recomendacion = ({ encuestaRespuestas }) => {
     cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.sabor.includes(encuestaRespuestas.flavorPreference));
 
     // Filtrar por nivel de alcohol según respuesta a la pregunta 5
-    if (encuestaRespuestas.alcoholPreference === 'Bajo (menos del 4%)') {
+    if (encuestaRespuestas.alcoholPreference === 'low') {
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.porcentaje_alcohol < 4);
-    } else if (encuestaRespuestas.alcoholPreference === 'Moderado (entre 4% y 6%)') {
+    } else if (encuestaRespuestas.alcoholPreference === 'medium') {
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.porcentaje_alcohol >= 4 && cerveza.porcentaje_alcohol <= 6);
-    } else if (encuestaRespuestas.alcoholPreference === 'Alto (mayor a 6.5%)') {
+    } else if (encuestaRespuestas.alcoholPreference === 'high') {
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.porcentaje_alcohol > 6);
     }
-
     // Filtrar por ingrediente adicional según respuesta a la pregunta 6
-    if (encuestaRespuestas.additionalIngredientPreference !== 'ninguno') {
+    if (encuestaRespuestas.additionalIngredientPreference !== 'none') {
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ingrediente_adicional.includes(encuestaRespuestas.additionalIngredientPreference));
     }
 

@@ -19,38 +19,76 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
     {
       id: 'hasTriedCraftBeer',
       texto: t('survey.question1'),
-      opciones: [t('survey.optionYes'), t('survey.optionNo')],
+      opciones: [
+        { id: 'yes', texto: t('survey.optionYes') },
+        { id: 'no', texto: t('survey.optionNo') },
+      ],
     },
     {
       id: 'beerStyle',
       texto: t('survey.question2'),
-      opciones: [t('survey.optionLager'), t('survey.optionWheat'), 
-      t('survey.optionIPA'), t('survey.optionStout'), t('survey.optionPilsner'), 
-      t('survey.optionDunkel'), t('survey.optionRedAle'), t('survey.optionPaleAle'), 
-      t('survey.optionLagerFrutal'), t('survey.optionBrownAle'), t('survey.optionAmberAle'), 
-      t('survey.optionPorter'), t('survey.optionImperialCacaoStout'), t('survey.optionImperialCoffeeStout'), t('survey.optionExperimentar')],
+      opciones: [
+        { id: 'lager', texto: t('survey.optionLager')},
+        { id: 'wheat', texto: t('survey.optionWheat')},
+        { id: 'ipa', texto: t('survey.optionIPA')},
+        { id: 'stout', texto: t('survey.optionStout')},
+        { id: 'pilsner', texto: t('survey.optionPilsner')},
+        { id: 'dunkel', texto: t('survey.optionDunkel')},
+        { id: 'red_ale', texto: t('survey.optionRedAle')},
+        { id: 'pale_ale', texto: t('survey.optionPaleAle')},
+        { id: 'lager_frutal', texto: t('survey.optionLagerFrutal')},
+        { id: 'brown_ale', texto: t('survey.optionBrownAle')},
+        { id: 'amber_ale', texto: t('survey.optionAmberAle')},
+        { id: 'porter', texto: t('survey.optionPorter')},
+        { id: 'imperial_cacao_stout', texto: t('survey.optionImperialCacaoStout')},
+        { id: 'imperial_coffee_stout', texto: t('survey.optionImperialCoffeeStout')},
+        { id: 'experimentar', texto: t('survey.optionExperimentar')}
+      ]
     },
     {
       id: 'ibuPreference',
       texto: t('survey.question3'),
-      opciones: [t('survey.optionLow'), t('survey.optionMedium'), t('survey.optionHigh')],
+      opciones: [
+        { id: 'low', texto: t('survey.optionLow') },
+        { id: 'medium', texto: t('survey.optionMedium') },
+        { id: 'high', texto: t('survey.optionHigh') },
+      ],
     },
     {
       id: 'flavorPreference',
       texto: t('survey.question4'),
-      opciones: [t('survey.optionFrutal'), t('survey.optionCaramelo'), t('survey.optionTostado'), 
-      t('survey.optionAhumado'), t('survey.optionLigero'), t('survey.optionCitrico'), t('survey.optionAmargoIntenso')],
+      opciones: [
+        { id: 'fruity', texto: t('survey.optionFrutal') },
+        { id: 'caramel', texto: t('survey.optionCaramelo') },
+        { id: 'toasted', texto: t('survey.optionTostado') },
+        { id: 'ahumado', texto:  t('survey.optionAhumado')},
+        { id: 'ligero_y_refrescante', texto: t('survey.optionLigero')},
+        { id: 'citrico', texto: t('survey.optionCitrico')},
+        { id: 'amargo_intenso', texto: t('survey.optionAmargoIntenso')}
+        // anadir ninguno o none
+      ],
     },
     {
       id: 'alcoholPreference',
       texto: t('survey.question5'),
-      opciones: [t('survey.optionAlcoholLow'), t('survey.optionAlcoholMedium'), t('survey.optionAlcoholHigh')],
+      opciones: [
+        { id: 'low', texto: t('survey.optionAlcoholLow') },
+        { id: 'medium', texto: t('survey.optionAlcoholMedium') },
+        { id: 'high', texto: t('survey.optionAlcoholHigh') },
+      ]
     },
     {
       id: 'additionalIngredientPreference',
       texto: t('survey.question6'),
-      opciones: [t('survey.optionFrutas'), t('survey.optionChocolate'), t('survey.optionCafe'), 
-      t('survey.optionCaram'), t('survey.optionPeanutButter'), t('survey.optionSinIngredientes'), t('survey.optionIndiferente')],
+      opciones: [
+        { id: 'fruit', texto: t('survey.optionFrutas') },
+        { id: 'chocolate', texto: t('survey.optionChocolate') },
+        { id: 'coffee', texto: t('survey.optionCafe') },
+        { id: 'caramelo', texto: t('survey.optionCaram')},
+        { id: 'peanut_butter', texto: t('survey.optionPeanutButter')},
+        { id: 'none', texto:  t('survey.optionSinIngredientes')},
+        { id: 'indiferente', texto: t('survey.optionIndiferente')}
+      ],
     },
   ];
 
@@ -116,12 +154,12 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
                 <label>
                   <input
                     type="radio"
-                    name={preguntaActual.id} // raiobutton + contador
-                    value={opcion}
-                    checked={respuestas[preguntaActual.id] === opcion}
+                    name={preguntaActual.id} // radiobutton + contador
+                    value={opcion.id}
+                    checked={respuestas[preguntaActual.id] === opcion.id}
                     onChange={(e) => handleInputChange(preguntaActual.id, e.target.value)}
                   />
-                  {opcion}
+                  {opcion.texto}
                 </label>
               </li>
               //contador++
