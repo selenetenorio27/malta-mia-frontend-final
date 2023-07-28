@@ -63,7 +63,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const handleNextClick = () => {
     setCurrentPage((prevPage) => {
       // Si el usuario contestó "No" en la pregunta 1, saltar a la pregunta 3 directamente.
-      if (prevPage === 0 && respuestas.hasTriedCraftBeer === 'no') {
+      if (prevPage === 0 && respuestas.hasTriedCraftBeer === t('survey.optionNo')){
         return prevPage + 2;
       }
       return prevPage + 1;
