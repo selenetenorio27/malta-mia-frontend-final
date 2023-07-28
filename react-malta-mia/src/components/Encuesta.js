@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
+import { useTranslation } from 'react-i18next';
 
 const Encuesta = ({ onSubmit }) => {
+  const { t } = useTranslation();
   
   const [currentPage, setCurrentPage] = useState(1);
   const [respuestas, setRespuestas] = useState({
@@ -17,48 +18,39 @@ const Encuesta = ({ onSubmit }) => {
   const preguntas = [
     {
       id: 'hasTriedCraftBeer',
-      texto: '1. ¿Ya has probado alguna cerveza artesanal?',
-      opciones: ['si', 'no'],
+      texto: t('survey.question1'),
+      opciones: [t('survey.optionYes'), t('survey.optionNo')],
     },
     {
       id: 'beerStyle',
-      texto: '2. ¿Qué tipo de estilo de cerveza te gusta?',
-      opciones: [
-        'lager',
-        'wheat ale',
-        'ipa',
-        'stout',
-        'pilsner',
-        'dunkel',
-        'red ale',
-        'pale ale',
-        'lager frutal',
-        'brown ale',
-        'amberale',
-        'porter',
-        'imperial cacao stout',
-        'imperial coffee stout',
-      ],
+      texto: t('survey.question2'),
+      opciones: [t('survey.optionLager'), t('survey.optionWheat'), 
+      t('survey.optionIPA'), t('survey.optionStout'), t('survey.optionPilsner'), 
+      t('survey.optionDunkel'), t('survey.optionRedAle'), t('survey.optionPaleAle'), 
+      t('survey.optionLagerFrutal'), t('survey.optionBrownAle'), t('survey.optionAmberAle'), 
+      t('survey.optionPorter'), t('survey.optionImperialCacaoStout'), t('survey.optionImperialCoffeeStout'), t('survey.optionExperimentar')],
     },
     {
       id: 'ibuPreference',
-      texto: '3. ¿Qué nivel de amargura o IBUs te gusta en una cerveza artesanal?',
-      opciones: ['baja (entre 8 y 20)', 'media (entre 21 y 50)', 'alta (mayor a 51)'],
+      texto: t('survey.question3'),
+      opciones: [t('survey.optionLow'), t('survey.optionMedium'), t('survey.optionHigh')],
     },
     {
       id: 'flavorPreference',
-      texto: '4. ¿Qué tipo de sabores prefieres en una cerveza artesanal?',
-      opciones: ['Frutal y dulce', 'caramelo', 'tostado', 'ahumado', 'ligero y refrescante', 'citrico', 'amargo intenso'],
+      texto: t('survey.question4'),
+      opciones: [t('survey.optionFrutal'), t('survey.optionCaramelo'), t('survey.optionTostado'), 
+      t('survey.optionAhumado'), t('survey.optionLigero'), t('survey.optionCitrico'), t('survey.optionAmargoIntenso')],
     },
     {
       id: 'alcoholPreference',
-      texto: '5. ¿Cuál es tu preferencia de nivel de alcohol?',
-      opciones: ['Bajo (menos del 4%)', 'Moderado (entre 4% y 6%)', 'Alto (mayor a 6.5%)'],
+      texto: t('survey.question5'),
+      opciones: [t('survey.optionAlcoholLow'), t('survey.optionAlcoholMedium'), t('survey.optionAlcoholHigh')],
     },
     {
       id: 'additionalIngredientPreference',
-      texto: '6. ¿Te gustaría que tu cerveza tuviera algún ingrediente adicional?',
-      opciones: ['frutas', 'chocolate', 'cafe', 'caramelo', 'mantequilla de mani', 'ninguno', 'me es indiferente'],
+      texto: t('survey.question6'),
+      opciones: [t('survey.optionFrutas'), t('survey.optionChocolate'), t('survey.optionCafe'), 
+      t('survey.optionCaram'), t('survey.optionPeanutButter'), t('survey.optionSinIngredientes'), t('survey.optionIndiferente')],
     },
   ];
 
@@ -117,12 +109,13 @@ const Encuesta = ({ onSubmit }) => {
         <div key={preguntaActual.id}>
           <p>{preguntaActual.texto}</p>
           <ul>
+            {/* contador que parte en 1 */}
             {preguntaActual.opciones.map((opcion) => (
               <li key={opcion}>
                 <label>
                   <input
                     type="radio"
-                    name={preguntaActual.id}
+                    name={preguntaActual.id} // raiobutton + contador
                     value={opcion}
                     checked={respuestas[preguntaActual.id] === opcion}
                     onChange={(e) => handleInputChange(preguntaActual.id, e.target.value)}
@@ -130,6 +123,7 @@ const Encuesta = ({ onSubmit }) => {
                   {opcion}
                 </label>
               </li>
+              //contador++
             ))}
           </ul>
           <button disabled={currentPage === 0} onClick={handlePreviousClick}>

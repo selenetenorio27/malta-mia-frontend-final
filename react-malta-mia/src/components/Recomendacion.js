@@ -1,67 +1,22 @@
 import React from 'react';
+import beersData from './Cerveza';
 
 const Recomendacion = ({ encuestaRespuestas }) => {
-  const cervezasInventario = [
-    {
-      "cerveza_id": 1,
-      "color": "obscura",
-      "estilo": "lager",
-      "ibus": 22,
-      "ingrediente_adicional": "cafe",
-      "marca": "Principia",
-      "nombre": "Dark Lager",
-      "porcentaje_alcohol": 4.0,
-      "sabor": ["caramelo","tostado"]
-    },
-    {
-      "cerveza_id": 2,
-      "color": "clara",
-      "estilo": "wheat ale",
-      "ibus": 18,
-      "ingrediente_adicional": "ninguno",
-      "marca": "Principia",
-      "nombre": "American Wheat Ale",
-      "porcentaje_alcohol": 4.3,
-      "sabor": "ligero y refrescante"
-    },
-    {
-      "cerveza_id": 3,
-      "color": "clara turbia",
-      "estilo": "ipa",
-      "ibus": 30,
-      "ingrediente_adicional": "frutas",
-      "marca": "Principia",
-      "nombre": "Extrasolar",
-      "porcentaje_alcohol": 6.5,
-      "sabor": "frutal y dulce"
-    }, {
-      "cerveza_id": 4,
-      "color": "obscura",
-      "estilo": "stout",
-      "ibus": 38,
-      "ingrediente_adicional": ["cafe","chocolate"],
-      "marca": "Wendlandt",
-      "nombre": "Foca parlante",
-      "porcentaje_alcohol": 5.5,
-      "sabor": "tostado"
-  }
-    // Aquí podrías agregar más cervezas al inventario
-  ];
 
   const filtrarCervezas = () => {
     if (!encuestaRespuestas) {
       return [];
     }
 
-    let cervezasFiltradas = [...cervezasInventario];
+    let cervezasFiltradas = [...beersData];
 
     if (encuestaRespuestas.hasTriedCraftBeer === 'no') {
       // Filtrar por IBU según respuesta a la pregunta 3
-      if (encuestaRespuestas.ibuPreference === 'baja (entre 8 y 20)') {
+      if (encuestaRespuestas.ibuPreference === 'Baja (entre 8 y 20)') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 8 && cerveza.ibus <= 20);
-      } else if (encuestaRespuestas.ibuPreference === 'media (entre 21 y 50)') {
+      } else if (encuestaRespuestas.ibuPreference === 'Media (entre 21 y 50)') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 20 && cerveza.ibus <= 50);
-      } else if (encuestaRespuestas.ibuPreference === 'alta (mayor a 51)') {
+      } else if (encuestaRespuestas.ibuPreference === 'Alta (mayor a 51)') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 50);
       }
     } else if (encuestaRespuestas.hasTriedCraftBeer === 'si') {
