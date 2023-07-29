@@ -29,7 +29,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
       texto: t('survey.question2'),
       opciones: [
         { id: 'lager', texto: t('survey.optionLager')},
-        { id: 'wheat', texto: t('survey.optionWheat')},
+        { id: 'wheat_ale', texto: t('survey.optionWheat')},
         { id: 'ipa', texto: t('survey.optionIPA')},
         { id: 'stout', texto: t('survey.optionStout')},
         { id: 'pilsner', texto: t('survey.optionPilsner')},
@@ -42,7 +42,8 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
         { id: 'porter', texto: t('survey.optionPorter')},
         { id: 'imperial_cacao_stout', texto: t('survey.optionImperialCacaoStout')},
         { id: 'imperial_coffee_stout', texto: t('survey.optionImperialCoffeeStout')},
-        { id: 'experimentar', texto: t('survey.optionExperimentar')}
+        { id: 'experimentar', texto: t('survey.optionExperimentar')},
+        { id: 'helles_export_bierr', texto: t('survey.optionHellesExportBierr')}
       ]
     },
     {
@@ -62,8 +63,8 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
         { id: 'caramel', texto: t('survey.optionCaramelo') },
         { id: 'toasted', texto: t('survey.optionTostado') },
         { id: 'ahumado', texto:  t('survey.optionAhumado')},
-        { id: 'ligero_y_refrescante', texto: t('survey.optionLigero')},
-        { id: 'citrico', texto: t('survey.optionCitrico')},
+        { id: 'light_and_refreshing', texto: t('survey.optionLigero')},
+        { id: 'citric', texto: t('survey.optionCitrico')},
         { id: 'amargo_intenso', texto: t('survey.optionAmargoIntenso')}
         // anadir ninguno o none
       ],

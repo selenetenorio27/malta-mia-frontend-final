@@ -13,7 +13,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
     if (encuestaRespuestas.hasTriedCraftBeer === 'no') {
       // Filtrar por IBU según respuesta a la pregunta 3
       if (encuestaRespuestas.ibuPreference === 'low') {
-        cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 8 && cerveza.ibus <= 20);
+        cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus >= 8 && cerveza.ibus <= 20);
       } else if (encuestaRespuestas.ibuPreference === 'medium') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 20 && cerveza.ibus <= 50);
       } else if (encuestaRespuestas.ibuPreference === 'high') {
