@@ -73,11 +73,11 @@ const Recomendacion = ({ encuestaRespuestas }) => {
               </p>
               <p>
                 Ingredientes adicionales:{' '}
-                {Array.isArray(cerveza.sabor)
-                  ? cerveza.sabor.length > 1
-                    ? cerveza.sabor.join(', ')
-                    : cerveza.sabor[0]
-                  : cerveza.sabor}
+                {Array.isArray(cerveza.ingrediente_adicional)
+                  ? cerveza.ingrediente_adicional.length > 1
+                    ? cerveza.ingrediente_adicional.join(', ')
+                    : cerveza.ingrediente_adicional[0]
+                  : cerveza.ingrediente_adicional}
               </p>
             </li>
           ))}
