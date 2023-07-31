@@ -62,11 +62,10 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
         { id: 'fruity', texto: t('survey.optionFrutal') },
         { id: 'caramel', texto: t('survey.optionCaramelo') },
         { id: 'toasted', texto: t('survey.optionTostado') },
-        { id: 'ahumado', texto:  t('survey.optionAhumado')},
         { id: 'light_and_refreshing', texto: t('survey.optionLigero')},
         { id: 'citric', texto: t('survey.optionCitrico')},
-        { id: 'amargo_intenso', texto: t('survey.optionAmargoIntenso')},
-        { id: 'ninguno', texto: t('survey.optionNinguno')}
+        { id: 'intense_bitter', texto: t('survey.optionAmargoIntenso')},
+        { id: 'none', texto: t('survey.optionNinguno')}
         // anadir ninguno o none
       ],
     },
