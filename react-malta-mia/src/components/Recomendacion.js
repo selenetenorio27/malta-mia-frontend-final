@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import beersData from './Cerveza';
 
 const Recomendacion = ({ encuestaRespuestas }) => {
+
+  const [favoritos, setFavoritos] = useState([]);
 
   const filtrarCervezas = () => {
     if (!encuestaRespuestas) {
@@ -50,6 +52,14 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
   const cervezasRecomendadas = filtrarCervezas();
 
+  const handleMarcarFavorito = (cerveza) => {
+    setFavoritos((prevFavoritos) => [...prevFavoritos, cerveza]);
+    // Realiza la llamada a la API para guardar la cerveza como favorita en el backend
+    // Puedes utilizar axios u otra librería para realizar la llamada.
+    // Ejemplo:
+    // axios.post('URL_DEL_BACKEND/favoritos', { cerveza });
+  };
+
   return (
     <div>
       <h2>Recomendación</h2>
@@ -79,6 +89,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
                     : cerveza.ingrediente_adicional[0]
                   : cerveza.ingrediente_adicional}
               </p>
+              <button onClick={() => handleMarcarFavorito(cerveza)}>Marcar como Favorito</button>
             </li>
           ))}
         </ul>

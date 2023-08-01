@@ -28,6 +28,9 @@ const NavigationBar = () => {
               <Link to="/nuestros-productos">{t('Products')}</Link>
             </li>
             <li>
+              <Link to="/favoritos">{t('Favoritos')}</Link>
+            </li>
+            <li>
               <button onClick={() => handleLanguageChange('en')}>English</button>
               <button onClick={() => handleLanguageChange('es')}>Español</button>
             </li>

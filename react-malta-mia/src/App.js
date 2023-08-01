@@ -7,7 +7,10 @@ import AcercaDe from './components/AcercaDe';
 import Encuesta from './components/Encuesta';
 import NuestrosProductos from './components/NuestrosProductos';
 import Recomendacion from './components/Recomendacion';
+import Favoritos from './components/Favoritos';
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from './firebaseConfig.js'; 
 
 import './App.css'
 
@@ -15,6 +18,15 @@ const App= () => {
   const [encuestaRespuestas, setEncuestaRespuestas] = useState(null);
   const [mostrarRecomendacion, setMostrarRecomendacion] = useState(false);
 
+  let isLoggedIn = false;
+
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      isLoggedIn = true;
+    } else {
+      isLoggedIn = false;
+    }
+  });
 
 
   // useEffect(() => {
@@ -53,6 +65,10 @@ const App= () => {
             }
           />
           <Route path="/nuestros-productos" element={<NuestrosProductos />} />
+          <Route
+            path="/favoritos"
+            element={isLoggedIn ? <Favoritos /> : <p>Para ver tus favoritos, inicia sesión con tu cuenta de usuario.</p>}
+          />
         </Routes>
         {mostrarRecomendacion && (
           <Recomendacion encuestaRespuestas={encuestaRespuestas} />
