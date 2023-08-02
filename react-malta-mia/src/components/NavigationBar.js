@@ -38,8 +38,8 @@ const NavigationBar = () => {
               <Link to="/favoritos">{t('Favorites')}</Link>
             </li>
             <li>
-              <button onClick={() => handleLanguageChange('en')}>{t('English')}</button>
-              <button onClick={() => handleLanguageChange('es')}>{t('Spanish')}</button>
+              <button className="button-52" onClick={() => handleLanguageChange('en')}>{t('English')}</button>
+              <button className="button-52" onClick={() => handleLanguageChange('es')}>{t('Spanish')}</button>
             </li>
           </ul>
         </div>
