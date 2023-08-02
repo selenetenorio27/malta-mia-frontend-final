@@ -1,7 +1,7 @@
 .map-container {
     display: flex;
-    justify-content: space-between;
-    /* Lo que separa el mapa del logo */
+    flex-direction: column; /* Cambia la dirección de la flexión para apilar los elementos uno encima del otro */
+    align-items: center; /* Centra los elementos horizontalmente */
     margin-top: 150px;
   }
   
@@ -10,6 +10,7 @@
     padding: 10px;
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
   }
   
   .address-box {
@@ -18,7 +19,12 @@
   }
 
   #map {
-    height: 200px;
-    width: 50%;
+    height: 300px;
+    width: 100%;
     margin-right: 10px; /* Agrega un margen derecho para separarlo del cuadro de dirección */
+  }
+
+  .address-image {
+    width: 100%; /* Ajusta el ancho de la imagen según lo desees */
+    height: auto; /* Para mantener la proporción */
   }

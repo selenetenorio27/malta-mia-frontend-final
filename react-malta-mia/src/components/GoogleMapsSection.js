@@ -46,7 +46,7 @@ const GoogleMapsSection = () => {
     <div className="map-container">
       <div id="map" style={{ height: '400px', width: '70%' }}></div>
       <div className="address-container">
-        <div className="address-box">'Calz. de Tlalpan 4915-Local 1A, Tlalpan Centro II, Tlalpan, 14000 Ciudad de México, CDMX, México'</div>
+      <img src="/assets/local.jpg" alt="Malta Mia Address" className="address-image" />
       </div>
     </div>
   );
