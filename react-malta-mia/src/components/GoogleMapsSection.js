@@ -27,7 +27,7 @@ const GoogleMapsSection = () => {
         map: map,
         title: 'Malta Mia',
         icon: {
-          url: '/assets/BeerCup.png',
+          url: './assets/BeerCup.jpg',
           scaledSize: new window.google.maps.Size(40, 40),
         },
       });

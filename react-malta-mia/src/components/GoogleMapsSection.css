@@ -1,6 +1,8 @@
 .map-container {
     display: flex;
     justify-content: space-between;
+    /* Lo que separa el mapa del logo */
+    margin-top: 150px;
   }
   
   .address-container {
@@ -15,4 +17,8 @@
     line-height: 1.6;
   }
 
-  
+  #map {
+    height: 200px;
+    width: 50%;
+    margin-right: 10px; /* Agrega un margen derecho para separarlo del cuadro de dirección */
+  }
