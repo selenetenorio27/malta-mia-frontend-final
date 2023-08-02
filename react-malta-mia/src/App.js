@@ -12,6 +12,7 @@ import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig.js'; 
 import { useTranslation } from 'react-i18next';
+import GoogleMapsSection from './components/GoogleMapsSection';
 
 import './App.css'
 
@@ -88,6 +89,10 @@ const Inicio = () => {
       <h2>Página de inicio</h2> */}
       <img src="assets/MaltaMiaLogo.png" alt="Logo de tu web app" className="logo" />
       <Link to="/encuesta" className="floating-button"> 🍺 {t('floatingButton')}</Link>
+
+      <div className="sections-container">
+        <GoogleMapsSection />
+      </div>
     </div>
   );
 };
