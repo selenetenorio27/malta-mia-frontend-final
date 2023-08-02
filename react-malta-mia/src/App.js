@@ -80,9 +80,10 @@ const App= () => {
 
 const Inicio = () => {
   return (
-    <div>
-      <h1>MALTA MIA</h1>
-      <h2>Página de inicio</h2>
+    <div className="inicio-container">
+      {/* <h1>MALTA MIA</h1>
+      <h2>Página de inicio</h2> */}
+      <img src="/logo.png" alt="Logo de tu web app" className="logo" />
     </div>
   );
 };

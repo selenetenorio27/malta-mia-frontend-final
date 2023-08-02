@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Insanibc';
+    src:local('Insanibc'),
+        url('/Insanibc.ttf') format('truetype'); /* Ajusta la ruta según la ubicación de tu fuente */
+    /* Puedes agregar más formatos de fuente aquí (e.g., woff, woff2) para mayor compatibilidad con navegadores */
+  }
+

@@ -3,3 +3,18 @@ html {
   background-size: cover;
   box-sizing: border-box;
 }
+
+* {
+  font-family: Insanibc, sans-serif;
+}
+
+.inicio-container {
+  text-align: center;
+  margin-top: 50px; /* Ajusta el margen superior según lo desees */
+}
+
+/* Estilos para el logo */
+.logo {
+  width: 300px; /* Ajusta el ancho del logo según lo desees */
+  height: auto; /* Para mantener la proporción */
+}
