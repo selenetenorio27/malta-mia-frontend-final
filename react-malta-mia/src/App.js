@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Archivo de configuración de i18next
 import NavigationBar from './components/NavigationBar';
@@ -84,6 +84,7 @@ const Inicio = () => {
       {/* <h1>MALTA MIA</h1>
       <h2>Página de inicio</h2> */}
       <img src="assets/MaltaMiaLogo.png" alt="Logo de tu web app" className="logo" />
+      <Link to="/encuesta" className="floating-button"> 🍺 Realizar encuesta</Link>
     </div>
   );
 };

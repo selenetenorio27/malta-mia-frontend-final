@@ -19,3 +19,24 @@ html {
   width: 300px; /* Ajusta el ancho del logo según lo desees */
   height: auto; /* Para mantener la proporción */
 }
+
+
+
+
+
+/* Floating button */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+}
