@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import './Encuesta.css';
 
 const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const { t } = useTranslation();
@@ -143,6 +144,10 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
 
   return (
     <div>
+      <div className="banner">
+        <img src="/assets/artesanales.jpg" alt="Banner" />
+      </div>
+
       <h2>Encuesta</h2>
       {/* Mostrar la pregunta actual si la encuesta no está completada */}
       {!encuestaCompletada && preguntaActual && (

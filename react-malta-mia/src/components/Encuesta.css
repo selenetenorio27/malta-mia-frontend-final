@@ -1,0 +1,8 @@
+.banner {
+    text-align: center; /* Centra horizontalmente la imagen */
+    margin-bottom: 20px; /* Ajusta el espacio entre el banner y el contenido de la encuesta */
+  }
+  
+  .banner img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al ancho del contenedor */
+  }
