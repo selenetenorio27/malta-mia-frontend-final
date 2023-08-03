@@ -95,3 +95,10 @@ html {
 .right-section {
   text-align: right;
 }
+
+
+
+/* Carrusel de foto */
+.carousel-container {
+  margin-top: 80px; /* Ajusta el margen superior que desees */
+}
