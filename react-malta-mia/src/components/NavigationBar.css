@@ -6,7 +6,7 @@
     justify-content: center;
     position: relative;
     z-index: 1;
-  }
+}
   
   .wave-image {
     position: absolute;
@@ -36,6 +36,7 @@
     color: #333; /* Cambia el color del texto del enlace según tus preferencias */
     text-decoration: none;
     font-weight: bold;
+    /* font-size: x-large; */
   }
   
   /* Estilos para los botones de cambio de idioma */

@@ -6,7 +6,7 @@
   }
   
   .address-container {
-    width: 30%;
+    width: 60%; /*Ajustar el ancho de la foto del local*/
     padding: 10px;
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
