@@ -145,7 +145,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   return (
     <div>
       <div className="banner">
-        <img src="/assets/artesanales.jpg" alt="Banner" />
+        <img src="/assets/artesanales2.jpg" alt="Banner" />
         <div className="encuesta-text">{t('Survey')}</div>
       </div>
 
@@ -178,15 +178,15 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
           {currentPage < preguntas.length - 1 ? (
             <button onClick={handleNextClick}>{t('Next')}</button>
           ) : (
-            <button onClick={handleEncuestaSubmit}>Enviar encuesta</button>
+            <button onClick={handleEncuestaSubmit}>{t('Send.survey')}</button>
           )}
         </div>
       )}
 
       {encuestaCompletada && (
         <div>
-          <p>¡Gracias por completar la encuesta!</p>
-          <button onClick={handleRestartEncuesta}>Volver a contestar Encuesta</button>
+          <p>{t('Survey.thanks')}</p>
+          <button onClick={handleRestartEncuesta}>{t('Fill.out.survey.again')}</button>
         </div>
       )}
     </div>
