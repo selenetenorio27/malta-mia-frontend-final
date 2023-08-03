@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import beersData from './Cerveza';
+import { useTranslation } from 'react-i18next';
 
 const Recomendacion = ({ encuestaRespuestas }) => {
+  const { t } = useTranslation();
 
   const [favoritos, setFavoritos] = useState([]);
 
@@ -62,19 +64,19 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
   return (
     <div>
-      <h2>Recomendación</h2>
+      <h2>{t('Recomendation')}</h2>
       {cervezasRecomendadas === null ? (
-        <p>No se encontraron cervezas que cumplan con los filtros seleccionados.</p>
+        <p>{t('Recomendation.notfound')}</p>
       ) : cervezasRecomendadas.length > 0 ? (
         <ul>
           {cervezasRecomendadas.map((cerveza) => (
             <li key={cerveza.cerveza_id}>
               <h3>{cerveza.nombre}</h3>
-              <p>Estilo: {cerveza.estilo}</p>
+              <p>{t('Style')} {cerveza.estilo}</p>
               <p>IBU: {cerveza.ibus}</p>
-              <p>Porcentaje de alcohol: {cerveza.porcentaje_alcohol}</p>
+              <p>{t('Alcohol.level')} {cerveza.porcentaje_alcohol}</p>
               <p>
-                Sabor:{' '}
+              {t('Flavor')}{' '}
                 {Array.isArray(cerveza.sabor)
                   ? cerveza.sabor.length > 1
                     ? cerveza.sabor.join(', ')
@@ -82,14 +84,14 @@ const Recomendacion = ({ encuestaRespuestas }) => {
                   : cerveza.sabor}
               </p>
               <p>
-                Ingredientes adicionales:{' '}
+              {t('Aditional.ingredients')}{' '}
                 {Array.isArray(cerveza.ingrediente_adicional)
                   ? cerveza.ingrediente_adicional.length > 1
                     ? cerveza.ingrediente_adicional.join(', ')
                     : cerveza.ingrediente_adicional[0]
                   : cerveza.ingrediente_adicional}
               </p>
-              <button onClick={() => handleMarcarFavorito(cerveza)}>Marcar como Favorito</button>
+              <button onClick={() => handleMarcarFavorito(cerveza)}> ❤️ {t('Favorites')}</button>
             </li>
           ))}
         </ul>

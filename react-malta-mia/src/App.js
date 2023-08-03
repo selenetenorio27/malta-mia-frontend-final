@@ -8,7 +8,7 @@ import Encuesta from './components/Encuesta';
 import NuestrosProductos from './components/NuestrosProductos';
 import Recomendacion from './components/Recomendacion';
 import Favoritos from './components/Favoritos';
-import axios from 'axios';
+// import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig.js'; 
 import { useTranslation } from 'react-i18next';

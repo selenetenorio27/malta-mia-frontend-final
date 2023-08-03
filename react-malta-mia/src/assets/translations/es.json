@@ -8,6 +8,13 @@
     "Send.survey": "Enviar Encuesta",
     "Survey.thanks": "¡Gracias por completar la encuesta!",
     "Fill.out.survey.again":"Volver a contestar Encuesta",
+    "Recommendation":"Recomendación",
+    "Recommendation.notfound":"No beers were found that met the selected preferences",
+
+    "Style":"Estilo:",
+    "Alcohol.level":"% de alcohol:",
+    "Flavor":"Sabor:",
+    "Aditional.ingredients":"Ingredientes adicionales:",
 
     "Spanish":"Español",
     "English":"Inglés",
