@@ -1,12 +1,19 @@
 .banner {
-    text-align: center; /* Centra horizontalmente la imagen */
-    margin-bottom: 20px; /* Ajusta el espacio entre el banner y el contenido de la encuesta */
-    position: relative; /* Establece la posición como relativa para poder posicionar elementos internos */
-  }
+  text-align: center; /* Centra horizontalmente la imagen */
+  margin-bottom: 20px; /* Ajusta el espacio entre el banner y el contenido de la encuesta */
+  position: relative; /* Establece la posición como relativa para poder posicionar elementos internos */
+
+  /* Ajusta el tamaño del contenedor del banner en relación con la imagen */
+  width: 100%; /* Ancho del contenedor al 100% */
+  max-height: 300px; /* Altura máxima del contenedor (ajusta según tus necesidades) */
+  overflow: hidden; /* Oculta el contenido que sobresalga del tamaño del contenedor */
+}
   
-  .banner img {
-    max-width: 70%; /* Ajusta el tamaño máximo de la imagen al ancho del contenedor */
-  }
+.banner img {
+  width: 100%; /* Ajusta el tamaño de la imagen al 100% del ancho del contenedor */
+  /* Puedes usar la propiedad 'object-fit' para ajustar el comportamiento de la imagen */
+  object-fit: cover; /* Cubre el área del contenedor, manteniendo la relación de aspecto */
+}
 
   .encuesta-text {
     position: absolute; /* Establece la posición como absoluta */
@@ -15,7 +22,7 @@
     transform: translate(-50%, -50%); /* Centra el texto completamente */
     background-color: white; /* Fondo blanco */
     padding: 10px 20px; /* Ajusta el padding del rectángulo */
-    font-size: 150px; /* Tamaño del texto */
+    font-size: 100px; /* Tamaño del texto */
     font-weight: bold; /* Peso del texto */
     color: black; /* Color del texto */
     border-radius: 5px; /* Ajusta el radio de los bordes del rectángulo */
