@@ -7,7 +7,20 @@
     position: relative;
     z-index: 1;
 }
-  
+
+
+.logo-container {
+  position: absolute;
+  top: 10px; /* Ajusta la posición vertical según tus preferencias */
+  right: 20px; /* Ajusta la posición horizontal según tus preferencias */
+}
+
+.logo-image {
+  width: 100px; /* Ajusta el ancho de la imagen según tus preferencias */
+  height: auto; /* Para mantener la proporción de la imagen */
+}
+
+
   .wave-image {
     position: absolute;
     top: 0;
