@@ -18,6 +18,7 @@ html {
 .logo {
   width: 300px; /* Ajusta el ancho del logo según lo desees */
   height: auto; /* Para mantener la proporción */
+  margin-bottom: 60px; /* Lo que separa el logo del carrusel de fotos */
 }
 
 
@@ -100,5 +101,12 @@ html {
 
 /* Carrusel de foto */
 .carousel-container {
-  margin-top: 80px; /* Ajusta el margen superior que desees */
+  margin-top: 90px; /* Ajusta el margen superior que desees */
+  max-width: 600px; /* Define el ancho máximo del carrusel */
+  margin: 0 auto;
+}
+
+.carousel .slide img {
+  max-height: 500px; /* Define la altura máxima de las imágenes */
+  object-fit: contain; /* Ajusta el tamaño de las imágenes para que entren dentro del contenedor */
 }
