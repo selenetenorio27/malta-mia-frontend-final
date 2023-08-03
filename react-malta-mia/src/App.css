@@ -56,3 +56,42 @@ html {
     transform: scale(1);
   }
 }
+
+
+
+
+
+.black-section {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px; /* Ajusta el margen superior según lo desees */
+  margin-bottom: 30px; /* Agrega margen inferior */
+}
+
+.black-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+}
+
+/* Estilos para el texto en la nueva sección */
+.black-section p {
+  font-size: 16px;
+}
+
+/* Estilos para la sección de la izquierda */
+.left-section {
+  margin-right: 20px; /* Espacio entre los elementos izquierdo y derecho */
+}
+
+.right-section {
+  text-align: right;
+}

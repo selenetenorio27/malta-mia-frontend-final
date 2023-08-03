@@ -93,6 +93,20 @@ const Inicio = () => {
       <div className="sections-container">
         <GoogleMapsSection />
       </div>
+
+      {/* Nueva sección */}
+      <div className="black-section">
+        <div className="left-section">
+          <h3>{t('Hours')}</h3>
+          <p>{t('Monday.Wednesday')}: 12 PM - 8 PM</p>
+          <p>{t('Thursday.Saturday')}: 12 PM - 12 AM</p>
+          <p>{t('Sunday')}: 12 PM - 6 PM</p>
+        </div>
+        <div className="right-section">
+          <h3>{t('Contact.us')}</h3>
+          <p>📧 maltamia.cerveza@gmail.com</p>
+        </div>
+      </div>
     </div>
   );
 };
