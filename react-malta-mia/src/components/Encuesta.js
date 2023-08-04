@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Encuesta.css';
+import './EncuestaBackground.css';
 
 const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    // Cuando el componente se monta, agregamos la clase 'encuesta-page' al body
+    document.body.classList.add('encuesta-page');
+    // Cuando el componente se desmonta, eliminamos la clase 'encuesta-page' del body
+    return () => {
+      document.body.classList.remove('encuesta-page');
+    };
+  }, []);
+  
   
   const [currentPage, setCurrentPage] = useState(1);
   const [respuestas, setRespuestas] = useState({
