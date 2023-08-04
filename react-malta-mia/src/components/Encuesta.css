@@ -22,7 +22,7 @@
     transform: translate(-50%, -50%); /* Centra el texto completamente */
     background-color: white; /* Fondo blanco */
     padding: 10px 20px; /* Ajusta el padding del rectángulo */
-    font-size: 100px; /* Tamaño del texto */
+    font-size: 90px; /* Tamaño del texto */
     font-weight: bold; /* Peso del texto */
     color: black; /* Color del texto */
     border-radius: 5px; /* Ajusta el radio de los bordes del rectángulo */
