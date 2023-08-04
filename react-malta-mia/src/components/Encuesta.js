@@ -160,7 +160,8 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
         <div className="encuesta-text">{t('Survey')}</div>
       </div>
 
-      <h2>{t('Survey')}</h2>
+      <div className="encuesta-container">
+      <h2>{t('Find.craft.beer1')}<br />{t('Find.craft.beer2')}</h2>
       {/* Mostrar la pregunta actual si la encuesta no está completada */}
       {!encuestaCompletada && preguntaActual && (
         <div key={preguntaActual.id}>
@@ -200,6 +201,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
           <button onClick={handleRestartEncuesta}>{t('Fill.out.survey.again')}</button>
         </div>
       )}
+    </div>
     </div>
   );
 };
