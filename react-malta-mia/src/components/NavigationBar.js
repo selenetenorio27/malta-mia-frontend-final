@@ -21,7 +21,7 @@ const NavigationBar = () => {
         </svg>
       </div>
       <div className="logo-container">
-        <img src='/assets/MaltaMiaLogo.png' alt="Logo" className="logo-image" />
+        <img src='/assets/pruebaLogo.png' alt="Logo" className="logo-image" />
       </div>
         <div className="NavigationBarContainer">
           <ul className="menu">

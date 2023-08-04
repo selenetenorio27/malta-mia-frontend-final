@@ -16,7 +16,7 @@ html {
 
 /* Estilos para el logo */
 .logo {
-  width: 300px; /* Ajusta el ancho del logo según lo desees */
+  width: 350px; /* Ajusta el ancho del logo según lo desees */
   height: auto; /* Para mantener la proporción */
   margin-bottom: 60px; /* Lo que separa el logo del carrusel de fotos */
 }
