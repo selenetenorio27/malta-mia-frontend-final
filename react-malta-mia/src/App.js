@@ -55,7 +55,9 @@ const App= () => {
   return (
     <Router>
       <div>
+      <div className="nav-container">
         <NavigationBar />
+        </div>
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/acerca-de" element={<AcercaDe />} />
