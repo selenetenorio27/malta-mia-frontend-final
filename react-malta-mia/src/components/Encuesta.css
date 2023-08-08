@@ -43,7 +43,7 @@
   border: 2px solid var(--border-color);
   color: var(--secondary-color);
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
   border-radius: 50px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -93,7 +93,7 @@
   border: 2px solid var(--border-color);
   color: var(--secondary-color);
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
   border-radius: 50px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
