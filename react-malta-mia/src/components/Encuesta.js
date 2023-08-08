@@ -184,14 +184,16 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
               //contador++
             ))}
           </ul>
-          <button disabled={currentPage === 0} onClick={handlePreviousClick}>
+          <div className="button-container">
+          <button class="button_back" disabled={currentPage === 0} onClick={handlePreviousClick}>
           {t('Back')}
           </button>
           {currentPage < preguntas.length - 1 ? (
-            <button onClick={handleNextClick}>{t('Next')}</button>
+            <button class="button_next" onClick={handleNextClick}>{t('Next')}</button>
           ) : (
             <button onClick={handleEncuestaSubmit}>{t('Send.survey')}</button>
           )}
+          </div>
         </div>
       )}
 
