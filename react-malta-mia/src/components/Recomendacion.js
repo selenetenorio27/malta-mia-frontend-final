@@ -1,18 +1,39 @@
-import React, { useState } from 'react';
-import beersData from './Cerveza';
+import React, { useState, useEffect } from 'react';
+// import beersData from './Cerveza';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 const Recomendacion = ({ encuestaRespuestas }) => {
   const { t } = useTranslation();
+  const [cervezasFiltradas, setCervezasFiltradas] = useState([]);
+
+  useEffect(() => {
+    if (encuestaRespuestas) {
+      const apiUrl = 'https://malta-mia-api.onrender.com/cervezas';
+    
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          const beerData = response.data;
+          const cervezasFiltradas = filtrarCervezas(beerData);
+          setCervezasFiltradas(cervezasFiltradas);
+        })
+        .catch((error) => {
+          console.error('Error fetching beer data:', error);
+        });
+    }
+  }, [encuestaRespuestas]);
+
 
   const [favoritos, setFavoritos] = useState([]);
+  
 
-  const filtrarCervezas = () => {
-    if (!encuestaRespuestas) {
+  const filtrarCervezas = (beerData) => {
+    if (!encuestaRespuestas || !beerData) {
       return [];
     }
 
-    let cervezasFiltradas = [...beersData];
+    let cervezasFiltradas = [...beerData];
 
     if (encuestaRespuestas.hasTriedCraftBeer === 'no') {
       // Filtrar por IBU según respuesta a la pregunta 3
@@ -52,7 +73,7 @@ const Recomendacion = ({ encuestaRespuestas }) => {
     return cervezasFiltradas;
   };
 
-  const cervezasRecomendadas = filtrarCervezas();
+  // const cervezasRecomendadas = filtrarCervezas();
 
   const handleMarcarFavorito = (cerveza) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, cerveza]);
@@ -65,11 +86,11 @@ const Recomendacion = ({ encuestaRespuestas }) => {
   return (
     <div>
       <h2>{t('Recomendation')}</h2>
-      {cervezasRecomendadas === null ? (
+      {cervezasFiltradas === null ? (
         <p>{t('Recomendation.notfound')}</p>
-      ) : cervezasRecomendadas.length > 0 ? (
+      ) : cervezasFiltradas.length > 0 ? (
         <ul>
-          {cervezasRecomendadas.map((cerveza) => (
+          {cervezasFiltradas.map((cerveza) => (
             <li key={cerveza.cerveza_id}>
               <h3>{cerveza.nombre}</h3>
               <p>{t('Style')} {cerveza.estilo}</p>

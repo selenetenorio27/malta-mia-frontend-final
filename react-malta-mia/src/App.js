@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Archivo de configuración de i18next
@@ -34,12 +34,6 @@ const App= () => {
   });
 
 
-  // useEffect(() => {
-  //   axios
-  //   .get('https://malta-mia-api.onrender.com/cervezas')
-  //   .then((response) => setBeerInventory(response.data))
-  //   .catch((error) => console.error('Error fecthing beer inventory:', error));
-  // }, []);
 
   const handleEncuestaSubmit = (respuestas) => {
     setEncuestaRespuestas(respuestas);
@@ -90,8 +84,7 @@ const Inicio = () => {
 
   return (
     <div className="inicio-container">
-      {/* <h1>MALTA MIA</h1>
-      <h2>Página de inicio</h2> */}
+
       <img src="assets/MaltaMiaLogo.png" alt="Logo de tu web app" className="logo" />
       <Link to="/encuesta" className="floating-button"> 🍺 {t('floatingButton')}</Link>
 
