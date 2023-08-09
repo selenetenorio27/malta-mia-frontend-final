@@ -195,7 +195,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
           {currentPage < preguntas.length - 1 ? (
             <button class="button_next" onClick={handleNextClick}>{t('Next')}</button>
           ) : (
-            <button onClick={handleEncuestaSubmit}>{t('Send.survey')}</button>
+            <button class="button_send" onClick={handleEncuestaSubmit}>{t('Send.survey')}</button>
           )}
           </div>
         </div>
