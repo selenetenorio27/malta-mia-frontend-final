@@ -1,0 +1,116 @@
+.mug-container {
+    background-color: #555;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .glass {
+    width: 120px;
+    height: 200px;
+    border-bottom: 5px solid #FFF;
+    border-left: 5px solid #FFF;
+    border-right: 5px solid #FFF;
+    border-radius: 0 0 10% 10%;
+  }
+  
+  .mug-container .grip {
+    width: 40px;
+    height: 90px;
+    border-bottom: 5px solid #FFF;
+    border-top: 5px solid #FFF;
+    border-right: 5px solid #FFF;
+    border-radius: 0 10% 30% 0;
+    margin-bottom: 10px;
+  }
+  
+  .foam {
+    display: relative;
+    position: absolute;
+    height: 45px;
+    top: 0;
+    left: 1px;
+    z-index: 100;
+  }
+  
+  .foam__item {
+    width: 13.75px;
+    height: 39.1875px;
+    display: inline-block;
+  }
+  
+  .foam__item__circle {
+    width: 26.125px;
+    height: 26.125px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .foam__item__circle--bottom {
+    margin-top: 6.53125px;
+  }
+  
+  @keyframes fill-foam {
+    from {
+      top: 173.875px;
+    }
+    to {
+      top: 0px;
+    }
+  }
+  .foam--filling {
+    animation: fill-foam 2s ease-in-out;
+  }
+  
+  .liquid {
+    background-color: #F5A510;
+    width: 120px;
+    height: 186.9375px;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    border-radius: 0 0 8% 8%;
+  }
+  
+  @keyframes fill-liquid {
+    0% {
+      height: 0px;
+    }
+  }
+  .liquid--filling {
+    animation: fill-liquid 2s ease-in-out;
+  }
+  
+  @keyframes bubble {
+    0% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: 200px;
+    }
+  }
+  .bubble {
+    height: 1px;
+    width: 1px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    z-index: 90;
+    position: absolute;
+    left: 15px;
+    animation: bubble 2s infinite ease-in;
+    background-color: #fff;
+    opacity: 0.4;
+  }
+  
+  .bubble--big {
+    height: 2px;
+    width: 2px;
+  }

@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Encuesta.css';
 import './EncuestaBackground.css';
+import MugAnimation from './MugAnimation';
 
 const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const { t } = useTranslation();
+
+  const [showMugAnimation, setShowMugAnimation] = useState(false);
 
   useEffect(() => {
     // Cuando el componente se monta, agregamos la clase 'encuesta-page' al body
@@ -135,6 +138,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const handleEncuestaSubmit = () => {
     onSubmit(respuestas);
     setEncuestaCompletada(true);
+    setShowMugAnimation(true);
   };
 
   const handleRestartEncuesta = () => {
@@ -154,13 +158,13 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const preguntaActual = preguntas[currentPage];
 
   return (
-    <div>
+    <div className="encuesta-container">
       <div className="banner">
         <img src="/assets/artesanales2.jpg" alt="Banner" />
         <div className="encuesta-text">{t('Survey')}</div>
       </div>
 
-      <div className="encuesta-container">
+      <div className="encuesta-content-container">
       <h2>{t('Find.craft.beer1')}<br />{t('Find.craft.beer2')}</h2>
       {/* Mostrar la pregunta actual si la encuesta no está completada */}
       {!encuestaCompletada && preguntaActual && (
@@ -197,12 +201,13 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
         </div>
       )}
 
-      {encuestaCompletada && (
-        <div>
-          <p>{t('Survey.thanks')}</p>
-          <button onClick={handleRestartEncuesta}>{t('Fill.out.survey.again')}</button>
-        </div>
-      )}
+{encuestaCompletada && (
+  <div>
+    <MugAnimation /> {/* Muestra la animación de la taza inmediatamente */}
+    <p>{t('Survey.thanks')}</p> {/* Muestra la recomendación inmediatamente después de la animación */}
+    <button onClick={handleRestartEncuesta}>{t('Fill.out.survey.again')}</button>
+  </div>
+)}
     </div>
     </div>
   );
