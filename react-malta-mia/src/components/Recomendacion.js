@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import beersData from './Cerveza';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
@@ -73,15 +72,29 @@ const Recomendacion = ({ encuestaRespuestas }) => {
     return cervezasFiltradas;
   };
 
-  // const cervezasRecomendadas = filtrarCervezas();
 
-  const handleMarcarFavorito = (cerveza) => {
+  const handleMarcarFavorito = async (cerveza) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, cerveza]);
-    // Realiza la llamada a la API para guardar la cerveza como favorita en el backend
-    // Puedes utilizar axios u otra librería para realizar la llamada.
-    // Ejemplo:
-    // axios.post('URL_DEL_BACKEND/favoritos', { cerveza });
+  
+    try {
+      // llamada API para guardar la cerveza como favorita en el backend
+      const response = await axios.post(
+        'https://malta-mia-api.onrender.com/add_favorito', 
+        { cerveza_id: cerveza.cerveza_id }, 
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+  
+      console.log('Cerveza marcada como favorita:', response.data);
+    } catch (error) {
+      console.error('Error al marcar la cerveza como favorita:', error);
+    }
   };
+
+  
 
   return (
     <div>
