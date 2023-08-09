@@ -85,9 +85,9 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
   return (
     <div>
-      <h2>{t('Recomendation')}</h2>
+      <h2>{t('Recommendation')}</h2>
       {cervezasFiltradas === null ? (
-        <p>{t('Recomendation.notfound')}</p>
+        <p>{t('Recommendation.notfound')}</p>
       ) : cervezasFiltradas.length > 0 ? (
         <ul>
           {cervezasFiltradas.map((cerveza) => (

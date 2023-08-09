@@ -205,7 +205,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   <div>
     <MugAnimation /> {/* Muestra la animación de la taza inmediatamente */}
     <p>{t('Survey.thanks')}</p> {/* Muestra la recomendación inmediatamente después de la animación */}
-    <button onClick={handleRestartEncuesta}>{t('Fill.out.survey.again')}</button>
+    <button class="button-restart" onClick={handleRestartEncuesta}>{t('Fill.out.survey.again')}</button>
   </div>
 )}
     </div>
