@@ -26,15 +26,6 @@ const App= () => {
 
   let [user] = useAuthState(auth);
 
-  let isLoggedIn = false;
-
-  auth.onAuthStateChanged(function(user) {
-    if (user) {
-      isLoggedIn = true;
-    } else {
-      isLoggedIn = false;
-    }
-  });
 
 
 
@@ -70,9 +61,9 @@ const App= () => {
           />
           <Route path="/nuestros-productos" element={<NuestrosProductos />} />
           <Route
-            path="/favoritos"
-            element={user ? <Favoritos /> : <p>Para ver tus favoritos, inicia sesión con tu cuenta de usuario.</p>}
-          />
+  path="/favoritos"
+  element={<Favoritos user={user} />}
+/>
           <Route path="/login" element={<Login />} />
         </Routes>
         {mostrarRecomendacion && (
