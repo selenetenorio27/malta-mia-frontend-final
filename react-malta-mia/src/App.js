@@ -27,8 +27,6 @@ const App= () => {
   let [user] = useAuthState(auth);
 
 
-
-
   const handleEncuestaSubmit = (respuestas) => {
     setEncuestaRespuestas(respuestas);
     setMostrarRecomendacion(true);

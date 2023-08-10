@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 //import { auth } from '../firebaseConfig';
 import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import AuthDetails from './authDetails';
 
 const Favoritos = () => {
     const auth = getAuth();
@@ -15,7 +16,7 @@ const Favoritos = () => {
 
     useEffect(() => {
         const fetchUserFavorites = async () => {
-          if (auth.currentUser) {
+          if (user) {
             try {
               // Make an API call to fetch the user's favorites
               // Replace the API_URL with the endpoint to fetch user favorites
@@ -41,12 +42,11 @@ const Favoritos = () => {
       }, [user]);
 
       return (
-        <div>
+        <div className="favoritos-container">
           <h2>Tus Favoritos</h2>
           {!user && (
             <p>
-              Para ver tus favoritos, <Link to="/login">inicia sesión</Link> con tu cuenta de 
-              usuario o si lo deseas <Link to="/signup">crea una cuenta</Link>.
+              Para ver tus favoritos, <Link to="/login">inicia sesión</Link> con tu cuenta de usuario o si lo deseas <Link to="/signup">crea una cuenta</Link>.
             </p>
           )}
           {user && userFavorites.length > 0 ? (
@@ -61,6 +61,9 @@ const Favoritos = () => {
           ) : (
             <p>No tienes favoritos guardados.</p>
           )}
+          <div className="user-details">
+            <AuthDetails /> {/* Display user details and sign out */}
+          </div>
         </div>
       );
     };
