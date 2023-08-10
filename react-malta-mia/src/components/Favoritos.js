@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../firebaseConfig';
+//import { auth } from '../firebaseConfig';
+import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 
 const Favoritos = () => {
+    const auth = getAuth();
     const [user] = useAuthState(auth);
     const [userFavorites, setUserFavorites] = useState([]);
 
@@ -43,7 +45,8 @@ const Favoritos = () => {
           <h2>Tus Favoritos</h2>
           {!user && (
             <p>
-              Para ver tus favoritos, <Link to="/login">inicia sesión</Link> con tu cuenta de usuario.
+              Para ver tus favoritos, <Link to="/login">inicia sesión</Link> con tu cuenta de 
+              usuario o si lo deseas <Link to="/signup">crea una cuenta</Link>.
             </p>
           )}
           {user && userFavorites.length > 0 ? (

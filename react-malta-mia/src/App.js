@@ -13,12 +13,12 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig.js'; 
 import { useTranslation } from 'react-i18next';
 import GoogleMapsSection from './components/GoogleMapsSection';
-import Login from './components/Login';
-
+import Login from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
 import './App.css'
+
 
 const App= () => {
   const [encuestaRespuestas, setEncuestaRespuestas] = useState(null);
@@ -65,6 +65,7 @@ const App= () => {
   element={<Favoritos user={user} />}
 />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
         {mostrarRecomendacion && (
           <Recomendacion encuestaRespuestas={encuestaRespuestas} />
