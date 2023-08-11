@@ -1,12 +1,12 @@
 body.encuesta-page {
-    background-image: url('/public/assets/Back.jpg'); /* Reemplaza 'tu-imagen-de-fondo.jpg' con el nombre de tu imagen */
+    background-image: url('/public/assets/Back.jpg'); 
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex; /* Agrega un display flex para que el contenido ocupe todo el alto */
+    display: flex; /* display flex para que el contenido ocupe todo el alto */
     flex-direction: column; /* Establece una dirección de columna para los elementos internos */
     justify-content: space-between;
   }

@@ -24,7 +24,7 @@ const SignIn = () => {
 
   return (
     <div className="sign-in-container">
-      <form onSubmit={signIn}> {/* Aquí se corrige */}
+      <form onSubmit={signIn}> 
         <h2>Log In</h2>
         <input
           type="email"

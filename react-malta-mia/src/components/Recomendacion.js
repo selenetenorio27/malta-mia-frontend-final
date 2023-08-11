@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { auth } from './../firebaseConfig';
+
 
 const Recomendacion = ({ encuestaRespuestas }) => {
   const { t } = useTranslation();
   const [cervezasFiltradas, setCervezasFiltradas] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     if (encuestaRespuestas) {
@@ -21,6 +24,15 @@ const Recomendacion = ({ encuestaRespuestas }) => {
           console.error('Error fetching beer data:', error);
         });
     }
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
   }, [encuestaRespuestas]);
 
 
@@ -72,27 +84,37 @@ const Recomendacion = ({ encuestaRespuestas }) => {
     return cervezasFiltradas;
   };
 
+  console.log(cervezasFiltradas)
+
+
 
   const handleMarcarFavorito = async (cerveza) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, cerveza]);
   
     try {
-      // llamada API para guardar la cerveza como favorita en el backend
-      const response = await axios.post(
-        'https://malta-mia-api.onrender.com/add_favorito', 
-        { cerveza_id: cerveza.cerveza_id }, 
+      const data = {
+        cliente_id: user.email,  
+        cerveza_id: cerveza.cerveza_id,
+      };
+      console.log(data)
+  
+      await axios.post(
+        'https://malta-mia-api.onrender.com/favoritos',
+        data,
         {
           headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${await auth.currentUser.getIdToken()}`,
           },
         }
       );
   
-      console.log('Cerveza marcada como favorita:', response.data);
+      console.log('Cerveza marcada como favorita en el backend');
     } catch (error) {
       console.error('Error al marcar la cerveza como favorita:', error);
     }
   };
+  
 
   
 
