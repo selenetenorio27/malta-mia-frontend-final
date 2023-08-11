@@ -126,7 +126,7 @@
   
   .button-52:after {
     content: "";
-    background-color: burlywood;
+    background-color: goldenrod;
     width: 100%;
     z-index: -1;
     position: absolute;

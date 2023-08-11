@@ -1,5 +1,5 @@
 
-const beersData = [
+const beerData = [
     {id:1, nombre:'Dark Lager', marca:'Principia',porcentaje_alcohol:4.0, estilo:'lager', ibus:22, color:'obscura', sabor:['caramel','toasted'], ingrediente_adicional:'coffee'},
     {id:2, nombre:'American Wheat Ale', marca:'Principia',porcentaje_alcohol:4.3, estilo:'wheat_ale', ibus:18, color:'clara', sabor:'light_and_refreshing', ingrediente_adicional:'none'},
     {id:3, nombre:'Extrasolar', marca:'Principia',porcentaje_alcohol:6.5, estilo:'ipa', ibus:30, color:'clara turbia', sabor:'fruity', ingrediente_adicional:'fruit'},
@@ -30,4 +30,4 @@ const beersData = [
     {id:28, nombre:'Pale Ale', marca:'Xinampa',porcentaje_alcohol:5.5, estilo:'pale_ale', ibus:40, color:'clara', sabor:'none', ingrediente_adicional:'none'}
 ];
 
-export default beersData;
+export default beerData;

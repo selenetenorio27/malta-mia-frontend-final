@@ -1,4 +1,34 @@
+.favoritos-text {
+  position: absolute;
+  top: 141px; /* Ajusta la posición vertical */
+  left: 261px; /* Ajusta la posición horizontal */
+  background-color: white; /* Fondo blanco */
+  padding: 10px 20px; /* Ajusta el padding del rectángulo */
+  font-size: 30px; /* Tamaño del texto */
+  font-weight: bold; /* Peso del texto */
+  color: black; /* Color del texto */
+  border-radius: 5px; /* Ajusta el radio de los bordes del rectángulo */
+  font-family: 'Insanibc', sans-serif;
+}
+
 .favoritos-container {
-    background: url('/assets/login.jpg') no-repeat center fixed;
-    background-size: cover;
-  }
+  padding-top: 150px; /* Ajusta la distancia desde arriba  */
+  padding-left: 20px; /* Ajusta la distancia desde el lado izquierdo  */
+}
+
+.favoritos-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Cambia "center" por "flex-start" */
+  height: calc(100vh - 150px); /* Ajusta la altura del contenedor según tus preferencias */
+  margin-top: 50px; /* Ajusta la separación superior según tus preferencias */
+}
+
+.favoritos-logo img {
+  max-width: 65%; /* Ajusta el tamaño máximo de la imagen según tus preferencias */
+  height: auto;
+}
+
+
+
+

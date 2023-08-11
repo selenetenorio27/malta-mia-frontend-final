@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './NavigationBar.css';
 
 
+
 const NavigationBar = () => {
     const { t, i18n } = useTranslation();
   

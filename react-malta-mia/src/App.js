@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Archivo de configuración de i18next
 import NavigationBar from './components/NavigationBar';
@@ -13,10 +13,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig.js'; 
 import { useTranslation } from 'react-i18next';
 import GoogleMapsSection from './components/GoogleMapsSection';
-import Login from './components/auth/SignIn';
+import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css'
 
 
@@ -58,12 +59,13 @@ const App= () => {
             }
           />
           <Route path="/nuestros-productos" element={<NuestrosProductos />} />
+  
+          <Route path="/signin" element={user ? <Navigate to="/favoritos" /> : <SignIn />} />
+          <Route path="/signup" element={user ? <Navigate to="/favoritos" /> : <SignUp />} />
           <Route
-  path="/favoritos"
-  element={<Favoritos user={user} />}
-/>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+            path="/favoritos"
+            element={user ? <Favoritos user={user} /> : <Navigate to="/signin" />}
+          />
         </Routes>
         {mostrarRecomendacion && (
           <Recomendacion encuestaRespuestas={encuestaRespuestas} />

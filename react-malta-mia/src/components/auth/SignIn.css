@@ -1,0 +1,89 @@
+.sign-in-text {
+  position: absolute;
+  top: 141px;
+  left: 50px;
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  font-family: 'Insanibc', sans-serif;
+  width: 135px;
+  height: 80px;
+  display: flex; /* Agrega esta propiedad */
+  align-items: center; /* Agrega esta propiedad */
+}
+  
+  .sign-in-container {
+    padding-top: 150px; /* Ajusta la distancia desde arriba  */
+    padding-left: 20px; /* Ajusta la distancia desde el lado izquierdo  */
+  }
+  
+  .sign-in-logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambia "center" por "flex-start" */
+    height: calc(100vh - 150px); /* Ajusta la altura del contenedor según tus preferencias */
+    margin-top: 50px; /* Ajusta la separación superior según tus preferencias */
+  }
+  
+  .sign-in-logo img {
+    max-width: 65%; /* Ajusta el tamaño máximo de la imagen según tus preferencias */
+    height: auto;
+  }
+  
+
+  .sign-in-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Asegura que esté encima del fondo */
+  }
+  
+
+
+
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 262px; 
+    margin-left: 10px; /* Ajusta el margen izquierdo según tus preferencias */
+  max-width: 300px; /* Ajusta el ancho máximo del formulario según tus preferencias */
+  }
+  
+  .sign-in-form .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .sign-in-form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .sign-in-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .sign-in-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .sign-in-form button:hover {
+    background-color: #0056b3;
+  }

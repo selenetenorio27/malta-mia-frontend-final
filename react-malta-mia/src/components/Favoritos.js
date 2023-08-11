@@ -5,6 +5,9 @@ import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import AuthDetails from './authDetails';
 import './FavoritosBackground.css';
+import './Favoritos.css';
+import SignIn from './auth/SignIn';
+
 
 const Favoritos = () => {
     const auth = getAuth();
@@ -44,31 +47,39 @@ const Favoritos = () => {
       fetchUserFavorites();
     }, [user]);
 
-      return (
-        <div className="favoritos-container">
-          <h2>Tus Favoritos</h2>
-          {!user && (
-            <p>
-              Para ver tus favoritos, <Link to="/login">inicia sesión</Link> con tu cuenta de usuario o si lo deseas <Link to="/signup">crea una cuenta</Link>.
-            </p>
-          )}
-          {user && userFavorites.length > 0 ? (
-            <ul>
-              {userFavorites.map((cerveza) => (
-                <li key={cerveza.id}>
-                  <h3>{cerveza.nombre}</h3>
-                  {/* Posiblemente mas detalles cerveza */}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No tienes favoritos guardados.</p>
-          )}
-          <div className="user-details">
-            <AuthDetails /> {/* Detalles del signout */}
-          </div>
+    return (
+      <div className="favoritos-container favoritos-page">
+        <div className="favoritos-logo">
+          <img src="/assets/beercap.png" alt="Logo" />
         </div>
-      );
-    };
-    
-    export default Favoritos;
+        <div className="favoritos-text">
+          <h2>Tus Favoritos</h2>
+        </div>
+        {!user ? (
+          <div className="sign-in-overlay">
+            <SignIn />
+          </div>
+        ) : (
+          <div className="user-content">
+            {userFavorites.length > 0 ? (
+              <ul>
+                {userFavorites.map((cerveza) => (
+                  <li key={cerveza.id}>
+                    <h3>{cerveza.nombre}</h3>
+                    {/* Posiblemente más detalles de la cerveza */}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No tienes favoritos guardados.</p>
+            )}
+            <div className="user-details">
+              <AuthDetails /> {/* Detalles del signout */}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  export default Favoritos;
