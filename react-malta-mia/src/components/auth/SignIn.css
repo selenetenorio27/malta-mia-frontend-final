@@ -23,9 +23,9 @@
   .sign-in-logo {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Cambia "center" por "flex-start" */
-    height: calc(100vh - 150px); /* Ajusta la altura del contenedor según tus preferencias */
-    margin-top: 50px; /* Ajusta la separación superior según tus preferencias */
+    align-items: center;
+    height: calc(100vh - 200px); /* Ajusta la altura del contenedor según tus preferencias */
+    margin-top: 50px; /* Ajusta la separación superior del logo */
   }
   
   .sign-in-logo img {
@@ -55,9 +55,9 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    margin-top: 262px; 
-    margin-left: 10px; /* Ajusta el margen izquierdo según tus preferencias */
-  max-width: 300px; /* Ajusta el ancho máximo del formulario según tus preferencias */
+    margin-top: 50px; /* Ajusta la separación superior del formulario */
+    margin-left: 10px;
+    max-width: 300px;
   }
   
   .sign-in-form .input-group {
