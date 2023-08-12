@@ -1,39 +1,50 @@
-.nuestros-productos-container {
+.imagenes-container {
     display: flex;
-    flex-direction: column; /* Cambia la dirección de flexión a vertical */
-    align-items: center; /* Centra horizontalmente */
-    padding: 40px; /* Espaciado alrededor de los elementos */
-  }
-  
-  .titulo-container {
-    margin-bottom: 20px; /* Espaciado entre el título y las imágenes */
-    background-color: white; /* Fondo blanco para el contenedor del título */
-    padding: 10px 20px; /* Espaciado interno para el contenedor del título */
-    border-radius: 5px; /* Bordes redondeados para el contenedor del título */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para el contenedor del título */
-    display: inline-block; /* Para que el contenedor ajuste su tamaño al contenido */
-  }
-  
-  .productos-title {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .imagenes-container {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
+    overflow: hidden;
+    margin-bottom: 40px; /* Espaciado entre las dos filas de imágenes */
   }
   
   /* Estilos para el contenedor de imagen */
   .image-container {
-    flex: 1; /* Ocupar el 50% del espacio disponible */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
   }
   
   /* Ajusta el tamaño de las imágenes */
   .image-container img {
-    max-height: 600px; /* Ajusta la altura de la imagen como desees */
-    width: auto; /* Ajusta el ancho automáticamente para mantener la relación de aspecto */
-    max-width: 100%; /* Evita que la imagen se desborde */
-    object-fit: contain; /* Ajusta la imagen para que quepa dentro del contenedor */
+    max-height: 100%; /* Ajustar el tamaño máximo al 100% del contenedor */
+    width: auto;
+    max-width: 100%;
+  }
+  
+  /* Estilos para las imágenes arriba del título */
+  .imagenes-container-arriba {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -65px;
+  }
+  
+  /* Estilos para el contenedor de imagen arriba */
+  .image-container-arriba {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  /* Ajusta el tamaño de las imágenes arriba */
+  .image-container-arriba img {
+    max-height: 100%; /* Ajustar el tamaño máximo al 100% del contenedor */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain; /* Usar "contain" para mantener la relación de aspecto */
   }
