@@ -25,19 +25,22 @@ const Favoritos = () => {
     }, []);
 
 
+    // Ruta para obtener favoritos
     useEffect(() => {
       const fetchUserFavorites = async () => {
         if (user) {
           try {
             // GET al backend para obtener las cervezas favoritas
             const response = await axios.get(
-              `https://malta-mia-api.onrender.com/${user.uid}/favoritos`,
+              `https://malta-mia-api.onrender.com/favoritos/${user.email}`,
               {
                 headers: {
                   Authorization: `Bearer ${await auth.currentUser.getIdToken()}`,
                 },
               }
             );
+
+            console.log(response.data)
     
             setUserFavorites(response.data);
           } catch (error) {
@@ -48,6 +51,27 @@ const Favoritos = () => {
     
       fetchUserFavorites();
     }, [user]);
+
+  
+
+    // Ruta cuando el usuario borra favoritos
+    const removeFavorite = async (clienteId, cervezaId) => {
+      try {
+        await axios.delete(`https://malta-mia-api.onrender.com/favoritos/${clienteId}/${cervezaId}`, {
+          headers: {
+            Authorization: `Bearer ${await auth.currentUser.getIdToken()}`,
+          },
+        });
+    
+        console.log('Cerveza removed from favorites');
+        // Update your state or UI to reflect the change
+      } catch (error) {
+        console.error('Error removing the beer from favorites:', error);
+      }
+    };
+
+
+
 
     useEffect(() => {
       // Deshabilitar el scroll cuando el usuario no esté autenticado
@@ -82,10 +106,15 @@ const Favoritos = () => {
       <div className="favoritos-container favoritos-page">
         <h2 className="favoritos-text">Tus Favoritos</h2>
         {user ? (
-          <>
-            {/* Aquí puedes agregar la imagen de fondo */}
-            <AuthDetails /> {/* Muestra el componente AuthDetails cuando el usuario está autenticado */}
-          </>
+          <div className="favoritos-list">
+            {userFavorites.map((cerveza) => (
+              <div className="favorito-item" key={cerveza.cerveza_id}>
+                <h3>{cerveza.nombre}</h3>
+                {/* Other beer details here */}
+                <button onClick={() => removeFavorite(user.email, cerveza.cerveza_id)}>Remove from Favorites</button>
+              </div>
+            ))}
+          </div>
         ) : (
           <div className="login-message-container">
             <SignIn showSignInOverlay={true} />
