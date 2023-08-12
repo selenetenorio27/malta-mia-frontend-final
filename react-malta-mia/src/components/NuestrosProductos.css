@@ -1,0 +1,32 @@
+.nuestros-productos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px; /* Espaciado alrededor de las imágenes */
+  }
+  
+  /* Estilos para el contenedor de imagen */
+  .image-container {
+    flex: 1; /* Ocupar el 50% del espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos específicos para el lado izquierdo */
+  .left {
+    justify-content: center; /* Centrar verticalmente */
+  }
+  
+  /* Estilos específicos para el lado derecho */
+  .right {
+    justify-content: center; /* Centrar verticalmente */
+  }
+  
+  /* Ajusta el tamaño de las imágenes */
+  .image-container img {
+    max-height: 600px; /* Ajusta la altura de la imagen como desees */
+    width: auto; /* Ajusta el ancho automáticamente para mantener la relación de aspecto */
+    max-width: 100%; /* Evita que la imagen se desborde */
+    object-fit: contain; /* Ajusta la imagen para que quepa dentro del contenedor */
+  }
