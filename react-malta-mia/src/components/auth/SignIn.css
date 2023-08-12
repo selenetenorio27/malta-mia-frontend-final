@@ -119,3 +119,8 @@
   color: #007bff; /* Cambia el color del enlace */
   text-decoration: underline; /* Agrega subrayado al enlace */
 }
+
+
+.favoritos-container.with-overlay .sign-in-overlay {
+  background-color: transparent;
+}

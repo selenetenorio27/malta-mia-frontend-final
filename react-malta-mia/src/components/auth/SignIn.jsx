@@ -6,7 +6,7 @@ import './SignIn.css';
 import { Link } from 'react-router-dom';
 
 
-const SignIn = () => {
+const SignIn = ({showSignInOverlay}) => {
 
   useEffect(() => {
     document.body.classList.add('favoritos-page');
@@ -35,7 +35,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="favoritos-container">
+    <div className={`favoritos-container ${showSignInOverlay ? 'with-overlay' : ''}`}>
       <div className="favoritos-logo">
         <img src="/assets/beercap.png" alt="Logo" />
       </div>
@@ -44,13 +44,6 @@ const SignIn = () => {
           <div className="sign-in-text">
             <h2>Log In</h2>
           </div>
-          <div className="login-message-container">
-          <p className="login-message">
-        Para ver tus favoritos debes{' '}
-        <Link to="/signin">iniciar sesión</Link> o{' '}
-        <Link to="/signup">crear una cuenta</Link>.
-      </p>
-</div>
           <form onSubmit={signIn}>
             <div className="input-group">
               <label>Email</label>

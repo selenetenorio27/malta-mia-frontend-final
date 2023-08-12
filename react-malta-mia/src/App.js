@@ -59,14 +59,10 @@ const App= () => {
             }
           />
           <Route path="/nuestros-productos" element={<NuestrosProductos />} />
-  
-          <Route path="/signin" element={user ? <Navigate to="/favoritos" /> : <SignIn />} />
-          <Route path="/signup" element={user ? <Navigate to="/favoritos" /> : <SignUp />} />
-          <Route
-            path="/favoritos"
-            element={user ? <Favoritos user={user} /> : <Navigate to="/signin" />}
-          />
-        </Routes>
+          <Route path="/signin" element={<SignIn />} />
+  <Route path="/signup" element={user ? <Navigate to="/favoritos" /> : <SignUp />} />
+  <Route path="/favoritos" element={<Favoritos />} />
+</Routes>
         {mostrarRecomendacion && (
           <Recomendacion encuestaRespuestas={encuestaRespuestas} />
         )}

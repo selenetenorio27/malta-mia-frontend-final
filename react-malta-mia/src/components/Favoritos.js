@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { getAuth } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import AuthDetails from './authDetails';
 import './FavoritosBackground.css';
 import './Favoritos.css';
@@ -13,6 +13,7 @@ const Favoritos = () => {
     const auth = getAuth();
     const [user] = useAuthState(auth);
     const [userFavorites, setUserFavorites] = useState([]);
+    const [showSignInOverlay, setShowSignInOverlay] = useState(true);
 
 
     useEffect(() => {
@@ -48,39 +49,40 @@ const Favoritos = () => {
       fetchUserFavorites();
     }, [user]);
 
+    if (!user) {
+      return (
+        <div className="favoritos-container favoritos-page">
+          <div className="favoritos-logo">
+            <img src="/assets/beercap.png" alt="Logo" />
+          </div>
+          <div className="login-message-container">
+            <div className="login-message">
+              Para ver tus favoritos debes{' '}
+              <Link to="/signin">iniciar sesión</Link> o{' '}
+              <Link to="/signup">crear una cuenta</Link>.
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="favoritos-container favoritos-page">
         <div className="favoritos-logo">
           <img src="/assets/beercap.png" alt="Logo" />
         </div>
-        <div className="favoritos-text">
-          <h2>Tus Favoritos</h2>
-        </div>
-        {!user ? (
-          <div className="sign-in-overlay">
-            <SignIn />
-          </div>
-        ) : (
-          <div className="user-content">
-            {userFavorites.length > 0 ? (
-              <ul>
-                {userFavorites.map((cerveza) => (
-                  <li key={cerveza.id}>
-                    <h3>{cerveza.nombre}</h3>
-                    {/* Posiblemente más detalles de la cerveza */}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No tienes favoritos guardados.</p>
-            )}
-            <div className="user-details">
-              <AuthDetails /> {/* Detalles del signout */}
+        {showSignInOverlay && (
+          <div className="login-message-container">
+            <div className="login-message">
+              Para ver tus favoritos debes{' '}
+              <button onClick={() => setShowSignInOverlay(false)}>iniciar sesión</button> o{' '}
+              <Link to="/signup">crear una cuenta</Link>.
             </div>
           </div>
         )}
+        {!user && <SignIn showSignInOverlay={true} />}
       </div>
     );
   };
-
+  
   export default Favoritos;
