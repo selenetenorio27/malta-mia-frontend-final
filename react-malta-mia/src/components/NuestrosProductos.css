@@ -1,26 +1,33 @@
 .nuestros-productos-container {
     display: flex;
+    flex-direction: column; /* Cambia la dirección de flexión a vertical */
+    align-items: center; /* Centra horizontalmente */
+    padding: 40px; /* Espaciado alrededor de los elementos */
+  }
+  
+  .titulo-container {
+    margin-bottom: 20px; /* Espaciado entre el título y las imágenes */
+    background-color: white; /* Fondo blanco para el contenedor del título */
+    padding: 10px 20px; /* Espaciado interno para el contenedor del título */
+    border-radius: 5px; /* Bordes redondeados para el contenedor del título */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para el contenedor del título */
+    display: inline-block; /* Para que el contenedor ajuste su tamaño al contenido */
+  }
+  
+  .productos-title {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .imagenes-container {
+    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 40px; /* Espaciado alrededor de las imágenes */
+    width: 100%;
   }
   
   /* Estilos para el contenedor de imagen */
   .image-container {
     flex: 1; /* Ocupar el 50% del espacio disponible */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Estilos específicos para el lado izquierdo */
-  .left {
-    justify-content: center; /* Centrar verticalmente */
-  }
-  
-  /* Estilos específicos para el lado derecho */
-  .right {
-    justify-content: center; /* Centrar verticalmente */
   }
   
   /* Ajusta el tamaño de las imágenes */
