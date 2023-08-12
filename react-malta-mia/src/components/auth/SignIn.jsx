@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 
 const SignIn = ({showSignInOverlay}) => {
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.body.classList.add('favoritos-page');
   
@@ -17,10 +21,6 @@ const SignIn = ({showSignInOverlay}) => {
   }, []);
 
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const navigate = useNavigate();
 
   const signIn = (e) => {
     e.preventDefault();
