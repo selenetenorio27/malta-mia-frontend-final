@@ -1,0 +1,9 @@
+body.productos-page {
+    background-image: url('/public/assets/fondo.jpg');
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 1800px; /* Ajusta esto según la altura de tu contenido */
+    margin: 0;
+    padding: 0;
+}
