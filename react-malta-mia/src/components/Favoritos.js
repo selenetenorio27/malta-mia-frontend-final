@@ -55,32 +55,33 @@ const Favoritos = () => {
           <div className="favoritos-logo">
             <img src="/assets/beercap.png" alt="Logo" />
           </div>
-          <div className="login-message-container">
-            <div className="login-message">
-              Para ver tus favoritos debes{' '}
-              <Link to="/signin">iniciar sesión</Link> o{' '}
-              <Link to="/signup">crear una cuenta</Link>.
+          {showSignInOverlay && (
+            <div className="login-message-container">
+              <div className="login-message">
+                Para ver tus favoritos debes{' '}
+                <Link to="/signin">iniciar sesión</Link> o{' '}
+                <Link to="/signup">crear una cuenta</Link>.
+              </div>
             </div>
-          </div>
+          )}
+          {!user && <SignIn showSignInOverlay={true} />}
         </div>
       );
     }
 
     return (
       <div className="favoritos-container favoritos-page">
-        <div className="favoritos-logo">
-          <img src="/assets/beercap.png" alt="Logo" />
-        </div>
-        {showSignInOverlay && (
+        <h2 className="favoritos-text">Tus Favoritos</h2>
+        {user ? (
+          <>
+            <AuthDetails /> {/* Muestra el componente AuthDetails cuando el usuario está autenticado */}
+            {/* Aquí puedes agregar la imagen de fondo */}
+          </>
+        ) : (
           <div className="login-message-container">
-            <div className="login-message">
-              Para ver tus favoritos debes{' '}
-              <button onClick={() => setShowSignInOverlay(false)}>iniciar sesión</button> o{' '}
-              <Link to="/signup">crear una cuenta</Link>.
-            </div>
+            <SignIn showSignInOverlay={true} />
           </div>
         )}
-        {!user && <SignIn showSignInOverlay={true} />}
       </div>
     );
   };
