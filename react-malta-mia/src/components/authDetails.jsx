@@ -31,7 +31,7 @@ const AuthDetails = () => {
       };
 
       return (
-        <div>
+        <div className="auth-details-container">
           {authUser ? (
             <>
               <p>{`Hola ${authUser.email}`}</p>

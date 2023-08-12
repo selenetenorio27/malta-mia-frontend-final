@@ -30,5 +30,19 @@
 }
 
 
+.auth-details-container {
+  position: absolute;
+  top: 157px; /* Ajusta la posición vertical */
+  right: 93px; /* Ajusta la posición horizontal */
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: black;
+  border-radius: 5px;
+  font-family: 'Insanibc', sans-serif;
+  z-index: 3; /* Asegura que esté por encima de otros elementos */
+}
+
+
 
 

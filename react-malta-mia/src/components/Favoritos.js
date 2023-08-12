@@ -83,8 +83,8 @@ const Favoritos = () => {
         <h2 className="favoritos-text">Tus Favoritos</h2>
         {user ? (
           <>
-            <AuthDetails /> {/* Muestra el componente AuthDetails cuando el usuario está autenticado */}
             {/* Aquí puedes agregar la imagen de fondo */}
+            <AuthDetails /> {/* Muestra el componente AuthDetails cuando el usuario está autenticado */}
           </>
         ) : (
           <div className="login-message-container">
