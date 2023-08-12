@@ -10,9 +10,9 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const [showMugAnimation, setShowMugAnimation] = useState(false);
 
   useEffect(() => {
-    // Cuando el componente se monta, agregamos la clase 'encuesta-page' al body
+    // Cuando el componente se monta, se agrega 'encuesta-page' al body
     document.body.classList.add('encuesta-page');
-    // Cuando el componente se desmonta, eliminamos la clase 'encuesta-page' del body
+    // Cuando el componente se desmonta, se elimina la clase 'encuesta-page' del body
     return () => {
       document.body.classList.remove('encuesta-page');
     };
