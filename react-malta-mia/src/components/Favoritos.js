@@ -49,6 +49,15 @@ const Favoritos = () => {
       fetchUserFavorites();
     }, [user]);
 
+    useEffect(() => {
+      // Deshabilitar el scroll cuando el usuario no esté autenticado
+      if (!user) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }, [user]);
+
     if (!user) {
       return (
         <div className="favoritos-container favoritos-page">

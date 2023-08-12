@@ -37,10 +37,10 @@ const SignIn = ({showSignInOverlay}) => {
 
   return (
     <div className={`favoritos-container ${showSignInOverlay ? 'with-overlay' : ''}`}>
-      <div className="favoritos-logo">
+      <div className={`favoritos-logo ${showSignInOverlay ? 'dark-background' : ''}`}>
         <img src="/assets/beercap.png" alt="Logo" />
       </div>
-      <div className="sign-in-overlay">
+      <div className={`sign-in-overlay ${showSignInOverlay ? 'dark-overlay' : ''}`}>
         <div className={`sign-in-form ${showSignInOverlay && showLoginForm ? 'visible' : ''}`}>
           <div className="sign-in-text">
             <h2>Log In</h2>

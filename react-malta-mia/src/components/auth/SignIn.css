@@ -124,3 +124,14 @@
 .favoritos-container.with-overlay .sign-in-overlay {
   background-color: transparent;
 }
+
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+}
+
+.dark-background {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  /* También puedes ajustar otros estilos, como el color del texto, para hacerlo más visible */
+  color: black;
+}
