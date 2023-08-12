@@ -14,6 +14,7 @@ const Favoritos = () => {
     const [user] = useAuthState(auth);
     const [userFavorites, setUserFavorites] = useState([]);
 
+
     useEffect(() => {
       document.body.classList.add('favoritos-page');
     
