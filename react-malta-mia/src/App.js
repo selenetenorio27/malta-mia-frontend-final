@@ -51,11 +51,16 @@ const App= () => {
           <Route
             path="/encuesta"
             element={
+              <>
               <Encuesta
                 onSubmit={handleEncuestaSubmit}
                 onRestart={handleRestartEncuesta}
                 encuestaRespuestas={encuestaRespuestas}
               />
+              {mostrarRecomendacion && (
+                <Recomendacion encuestaRespuestas={encuestaRespuestas} />
+              )}
+            </>
             }
           />
           <Route path="/nuestros-productos" element={<NuestrosProductos />} />
@@ -63,9 +68,6 @@ const App= () => {
   <Route path="/signup" element={user ? <Navigate to="/favoritos" /> : <SignUp />} />
   <Route path="/favoritos" element={<Favoritos />} />
 </Routes>
-        {mostrarRecomendacion && (
-          <Recomendacion encuestaRespuestas={encuestaRespuestas} />
-        )}
       </div>
     </Router>
   );
