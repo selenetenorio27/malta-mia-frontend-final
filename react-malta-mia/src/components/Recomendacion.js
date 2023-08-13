@@ -2,15 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { auth } from './../firebaseConfig';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth';
 
 
 const Recomendacion = ({ encuestaRespuestas }) => {
   const { t } = useTranslation();
+  const auth = getAuth();
+  const [user] = useAuthState(auth);
+
   const [cervezasFiltradas, setCervezasFiltradas] = useState([]);
-  const [user, setUser] = useState(null);
+
 
   useEffect(() => {
-    if (encuestaRespuestas) {
+    if (!encuestaRespuestas) return;
       const apiUrl = 'https://malta-mia-api.onrender.com/cervezas';
     
       axios
@@ -23,20 +28,9 @@ const Recomendacion = ({ encuestaRespuestas }) => {
         .catch((error) => {
           console.error('Error fetching beer data:', error);
         });
-    }
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => unsubscribe();
   }, [encuestaRespuestas]);
 
 
-  const [favoritos, setFavoritos] = useState([]);
   
 
   const filtrarCervezas = (beerData) => {
@@ -89,7 +83,10 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
 
   const handleMarcarFavorito = async (cerveza) => {
-    setFavoritos((prevFavoritos) => [...prevFavoritos, cerveza]);
+    if (!user) {
+      alert(t('Please log in to mark a beer as favorite.'));
+      return;
+    }
   
     try {
       const data = {
