@@ -97,6 +97,7 @@
 
 .favoritos-list-container {
   margin-top: 200px; /* Ajusta esta cantidad según tu preferencia */
+  margin-left: 60px; /* Agrega un margen izquierdo para mover la lista hacia la derecha */
 }
 
 .auth-details-container {
