@@ -84,10 +84,10 @@ const Favoritos = () => {
         <div className="auth-details-container">
           <AuthDetails />
         </div>
-        <div className="favoritos-content">
-          <h2 className="favoritos-text">Tus Favoritos</h2>
-          {!user && showSignInOverlay ? (
-            <div className="overlay">
+        <h2 className="favoritos-text">Tus Favoritos</h2>
+  <div className="favoritos-content">
+    {!user && showSignInOverlay ? (
+      <div className="overlay">
               <p>
                 Para ver tus favoritos debes{' '}
                 <Link to="/signin">iniciar sesión</Link> o{' '}
@@ -96,8 +96,9 @@ const Favoritos = () => {
             </div>
           ) : null}
           {user && (
-            <ul className="favoritos-list">
-              {userFavorites.map((cerveza) => (
+      <div className="favoritos-list-container">
+      <ul className="favoritos-list">
+         {userFavorites.map((cerveza) => (
                 <li key={cerveza.cerveza_id} className="favoritos-item">
                   <h3>{cerveza.nombre}</h3>
                   {/* ...otros detalles de la cerveza... */}
@@ -107,6 +108,7 @@ const Favoritos = () => {
                 </li>
               ))}
             </ul>
+            </div>
           )}
         </div>
       </div>

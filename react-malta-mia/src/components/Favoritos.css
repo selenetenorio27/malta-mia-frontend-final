@@ -60,6 +60,8 @@
   margin: 10px 0;
   background-color: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  /* Ajusta el ancho del elemento para controlar el espacio horizontal */
+  max-width: 400px; /* Puedes ajustar este valor según lo necesites */
 }
 
 .favoritos-item button {
@@ -69,7 +71,15 @@
   padding: 5px 10px;
   cursor: pointer;
   font-size: 14px;
+  margin-top: 5px; /* Ajusta el margen superior del botón */
 }
+
+
+
+
+
+
+
 
 .favoritos-container {
   display: flex;
@@ -82,4 +92,9 @@
 
 .favoritos-content {
   flex: 1;
+}
+
+
+.favoritos-list-container {
+  margin-top: 200px; /* Ajusta esta cantidad según tu preferencia */
 }
