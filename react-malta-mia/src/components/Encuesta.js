@@ -20,14 +20,25 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   
   
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Respuestas predeterminadas
   const [respuestas, setRespuestas] = useState({
-    hasTriedCraftBeer: null,
-    beerStyle: '',
-    ibuPreference: '',
-    flavorPreference: '',
-    alcoholPreference: '',
-    additionalIngredientPreference: '',
+    hasTriedCraftBeer: 'yes', // O 'no', dependiendo de tu preferencia
+    beerStyle: 'lager', // Cualquier estilo de cerveza que quieras preseleccionar
+    ibuPreference: 'low', // Otras opciones podrían ser 'medium' o 'high'
+    flavorPreference: 'light_and_refreshing', // Otras opciones podrían ser 'caramel', 'toasted', etc.
+    alcoholPreference: 'low', // Otras opciones podrían ser 'medium' o 'high'
+    additionalIngredientPreference: 'none', // Otras opciones podrían ser 'fruit', 'chocolate', etc.
   });
+  
+  // const [respuestas, setRespuestas] = useState({
+  //   hasTriedCraftBeer: null,
+  //   beerStyle: '',
+  //   ibuPreference: '',
+  //   flavorPreference: '',
+  //   alcoholPreference: '',
+  //   additionalIngredientPreference: '',
+  // });
   const [encuestaCompletada, setEncuestaCompletada] = useState(false);
 
   const preguntas = [
@@ -107,6 +118,8 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
       ],
     },
   ];
+
+
 
   useEffect(() => {
     // Al cargar el componente, mostramos automáticamente la pregunta 1.
