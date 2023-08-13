@@ -108,6 +108,7 @@ const Favoritos = () => {
 
     return (
       <div className="favoritos-container favoritos-page">
+         <AuthDetails />
         <h2 className="favoritos-text">Tus Favoritos</h2>
         {user ? (
           <div className="favoritos-list">
