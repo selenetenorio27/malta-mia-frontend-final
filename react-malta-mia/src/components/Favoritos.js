@@ -97,12 +97,20 @@ const Favoritos = () => {
           ) : null}
           {user && (
             <ul className="favoritos-list">
-              {/* Renderizar detalles de las cervezas favoritas */}
+              {userFavorites.map((cerveza) => (
+                <li key={cerveza.cerveza_id} className="favoritos-item">
+                  <h3>{cerveza.nombre}</h3>
+                  {/* ...otros detalles de la cerveza... */}
+                  <button onClick={() => removeFavorite(user.email, cerveza.cerveza_id)}>
+                    Remove from Favorites
+                  </button>
+                </li>
+              ))}
             </ul>
           )}
         </div>
       </div>
     );
-  };
+  }
   
   export default Favoritos;
