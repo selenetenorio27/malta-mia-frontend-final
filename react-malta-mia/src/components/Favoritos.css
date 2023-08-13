@@ -45,3 +45,41 @@
 .no-scroll {
   overflow: hidden; /* Evita el scroll detrás del overlay */
 }
+
+
+.favoritos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favoritos-item {
+  /* Estilos para cada cerveza en la lista */
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.favoritos-item button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.favoritos-container {
+  display: flex;
+}
+
+.auth-details-container {
+  margin-right: 20px; /* Espacio entre AuthDetails y contenido */
+  margin-top: 100px; /* Ajusta la distancia desde arriba */
+}
+
+.favoritos-content {
+  flex: 1;
+}

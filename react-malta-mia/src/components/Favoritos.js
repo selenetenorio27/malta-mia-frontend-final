@@ -81,26 +81,26 @@ const Favoritos = () => {
 
     return (
       <div className={`favoritos-container favoritos-page ${!user ? 'no-scroll' : ''}`}>
-         <h2 className="favoritos-text">Tus Favoritos</h2>
-        {!user && showSignInOverlay ? (
-          <div className="overlay">
-            <p>
-              Para ver tus favoritos debes{' '}
-              <Link to="/signin">iniciar sesión</Link> o{' '}
-              <Link to="/signup">crear una cuenta</Link>.
-            </p>
-          </div>
-        ) : null}
-        {/* Renderizar los favoritos solo si el usuario está autenticado */}
-        {user ? (
-          <ul className="favoritos-list">
-            {userFavorites.map((cerveza) => (
-              <li key={cerveza.cerveza_id} className="favoritos-item">
-                {/* Renderizar detalles de la cerveza */}
-              </li>
-            ))}
-          </ul>
-        ) : null}
+        <div className="auth-details-container">
+          <AuthDetails />
+        </div>
+        <div className="favoritos-content">
+          <h2 className="favoritos-text">Tus Favoritos</h2>
+          {!user && showSignInOverlay ? (
+            <div className="overlay">
+              <p>
+                Para ver tus favoritos debes{' '}
+                <Link to="/signin">iniciar sesión</Link> o{' '}
+                <Link to="/signup">crear una cuenta</Link>.
+              </p>
+            </div>
+          ) : null}
+          {user && (
+            <ul className="favoritos-list">
+              {/* Renderizar detalles de las cervezas favoritas */}
+            </ul>
+          )}
+        </div>
       </div>
     );
   };

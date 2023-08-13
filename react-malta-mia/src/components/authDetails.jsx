@@ -3,6 +3,7 @@ import {auth} from '../firebaseConfig';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const AuthDetails = () => {
+  
     const [authUser, setAuthUser] = useState(null);
 
     useEffect(() => {
