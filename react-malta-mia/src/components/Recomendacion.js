@@ -143,7 +143,9 @@ const Recomendacion = ({ encuestaRespuestas }) => {
                     : cerveza.ingrediente_adicional[0]
                   : cerveza.ingrediente_adicional}
               </p>
+              {user && (
               <button onClick={() => handleMarcarFavorito(cerveza)}> ❤️ {t('Favorites')}</button>
+              )}
             </li>
           ))}
         </ul>
