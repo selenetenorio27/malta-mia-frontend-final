@@ -64,7 +64,11 @@ const Favoritos = () => {
         });
     
         console.log('Cerveza removed from favorites');
-        // Update your state or UI to reflect the change
+    
+        // Actualizar el estado para reflejar la eliminación de la cerveza
+        setUserFavorites((prevUserFavorites) =>
+          prevUserFavorites.filter((cerveza) => cerveza.cerveza_id !== cervezaId)
+        );
       } catch (error) {
         console.error('Error removing the beer from favorites:', error);
       }
