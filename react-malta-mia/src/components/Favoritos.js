@@ -46,9 +46,12 @@ const Favoritos = () => {
           } catch (error) {
             console.error('Error fetching user favorites:', error);
           }
+        } else {
+          setShowSignInOverlay(true);
+          setUserFavorites([]);
         }
       };
-    
+  
       fetchUserFavorites();
     }, [user]);
 
@@ -78,9 +81,28 @@ const Favoritos = () => {
 
     return (
       <div className={`favoritos-container favoritos-page ${!user ? 'no-scroll' : ''}`}>
-        <h2 className="favoritos-text">Tus Favoritos</h2>
+         <h2 className="favoritos-text">Tus Favoritos</h2>
+        {!user && showSignInOverlay ? (
+          <div className="overlay">
+            <p>
+              Para ver tus favoritos debes{' '}
+              <Link to="/signin">iniciar sesión</Link> o{' '}
+              <Link to="/signup">crear una cuenta</Link>.
+            </p>
+          </div>
+        ) : null}
+        {/* Renderizar los favoritos solo si el usuario está autenticado */}
+        {user ? (
+          <ul className="favoritos-list">
+            {userFavorites.map((cerveza) => (
+              <li key={cerveza.cerveza_id} className="favoritos-item">
+                {/* Renderizar detalles de la cerveza */}
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
-  )
-};
+    );
+  };
   
   export default Favoritos;
