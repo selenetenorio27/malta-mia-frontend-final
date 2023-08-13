@@ -36,6 +36,7 @@ const App= () => {
   const handleRestartEncuesta = () => {
     setMostrarRecomendacion(false);
     setEncuestaRespuestas(null);
+    window.location.reload()
   };
   
 
