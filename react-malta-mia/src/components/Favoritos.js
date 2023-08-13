@@ -76,57 +76,11 @@ const Favoritos = () => {
 
 
 
-
-    useEffect(() => {
-      // Deshabilitar el scroll cuando el usuario no esté autenticado
-      if (!user) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = 'auto';
-      }
-    }, [user]);
-
-    if (!user) {
-      return (
-        <div className="favoritos-container favoritos-page">
-          <div className="favoritos-logo">
-            <img src="/assets/beercap.png" alt="Logo" />
-          </div>
-          {showSignInOverlay && (
-            <div className="login-message-container">
-              <div className="login-message">
-                Para ver tus favoritos debes{' '}
-                <Link to="/signin">iniciar sesión</Link> o{' '}
-                <Link to="/signup">crear una cuenta</Link>.
-              </div>
-            </div>
-          )}
-          {!user && <SignIn showSignInOverlay={true} />}
-        </div>
-      );
-    }
-
     return (
-      <div className="favoritos-container favoritos-page">
-         <AuthDetails />
+      <div className={`favoritos-container favoritos-page ${!user ? 'no-scroll' : ''}`}>
         <h2 className="favoritos-text">Tus Favoritos</h2>
-        {user ? (
-          <div className="favoritos-list">
-            {userFavorites.map((cerveza) => (
-              <div className="favorito-item" key={cerveza.cerveza_id}>
-                <h3>{cerveza.nombre}</h3>
-                {/* Other beer details here */}
-                <button onClick={() => removeFavorite(user.email, cerveza.cerveza_id)}>Remove from Favorites</button>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="login-message-container">
-            <SignIn showSignInOverlay={true} />
-          </div>
-        )}
       </div>
-    );
-  };
+  )
+};
   
   export default Favoritos;

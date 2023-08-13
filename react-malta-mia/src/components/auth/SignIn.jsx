@@ -6,11 +6,10 @@ import './SignIn.css';
 import { Link } from 'react-router-dom';
 
 
-const SignIn = ({showSignInOverlay}) => {
+const SignIn = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showLoginForm, setShowLoginForm] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,12 +35,12 @@ const SignIn = ({showSignInOverlay}) => {
   };
 
   return (
-    <div className={`favoritos-container ${showSignInOverlay ? 'with-overlay' : ''}`}>
-      <div className={`favoritos-logo ${showSignInOverlay ? 'dark-background' : ''}`}>
+    <div className="sign-in-container">
+      <div className="sign-in-logo">
         <img src="/assets/beercap.png" alt="Logo" />
       </div>
-      <div className={`sign-in-overlay ${showSignInOverlay ? 'dark-overlay' : ''}`}>
-        <div className={`sign-in-form ${showSignInOverlay && showLoginForm ? 'visible' : ''}`}>
+      <div className="sign-in-overlay">
+        <div className="sign-in-form">
           <div className="sign-in-text">
             <h2>Log In</h2>
           </div>
@@ -68,17 +67,7 @@ const SignIn = ({showSignInOverlay}) => {
           </form>
         </div>
       </div>
-      {/* Mostrar el enlace solo cuando showSignInOverlay es verdadero */}
-      {showSignInOverlay && (
-        <div className="login-message-container">
-          <div className="login-message">
-            Para ver tus favoritos debes{' '}
-            <Link to="/signin" onClick={() => setShowLoginForm(true)}>iniciar sesión</Link> o{' '}
-            <Link to="/signup">crear una cuenta</Link>.
           </div>
-        </div>
-      )}
-    </div>
   );
 };
 
