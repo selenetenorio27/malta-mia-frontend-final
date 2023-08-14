@@ -153,8 +153,8 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
     onSubmit(respuestas);
     setEncuestaCompletada(true);
     confetti({
-      particleCount: 100, // Número de confetis
-      spread: 70, // Área de dispersión
+      particleCount: 130, // Número de confetis
+      spread: 80, // Área de dispersión
       origin: { y: 0.6 }, // Origen vertical del confeti (0.6 significa desde arriba)
     });
     setShowMugAnimation(true);
