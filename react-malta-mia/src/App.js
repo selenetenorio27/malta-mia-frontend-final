@@ -38,13 +38,18 @@ const App= () => {
     setEncuestaRespuestas(null);
     window.location.reload()
   };
+
+  const handleNavigationBarEncuestaClick = () => {
+    setEncuestaRespuestas(null); // Reiniciar respuestas de encuesta al hacer clic en "Encuesta"
+    setMostrarRecomendacion(false); // Ocultar recomendación al hacer clic en "Encuesta"
+  };
   
 
   return (
     <Router>
       <div>
       <div className="nav-container">
-        <NavigationBar />
+      <NavigationBar onEncuestaLinkClick={handleNavigationBarEncuestaClick} />
         </div>
         <Routes>
           <Route path="/" element={<Inicio />} />

@@ -5,11 +5,15 @@ import './NavigationBar.css';
 
 
 
-const NavigationBar = () => {
+const NavigationBar = ({ onEncuestaLinkClick }) => {
     const { t, i18n } = useTranslation();
   
     const handleLanguageChange = (language) => {
       i18n.changeLanguage(language);
+    };
+
+    const handleEncuestaClick = () => {
+      onEncuestaLinkClick(); // Llama a la función para reiniciar la encuesta y la recomendación
     };
   
     return (
@@ -33,7 +37,7 @@ const NavigationBar = () => {
               <Link to="/acerca-de">{t('About')}</Link>
             </li>
             <li>
-              <Link to="/encuesta">{t('Survey')}</Link>
+            <Link to="/encuesta" onClick={handleEncuestaClick}>{t('Survey')}</Link>
             </li>
             <li>
               <Link to="/nuestros-productos">{t('Products')}</Link>
