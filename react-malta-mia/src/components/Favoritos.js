@@ -42,7 +42,7 @@ const Favoritos = () => {
               }
             );
 
-            console.log(response.data)
+  console.log(response.data)
     
             setUserFavorites(response.data);
           } catch (error) {
@@ -57,7 +57,6 @@ const Favoritos = () => {
       fetchUserFavorites();
     }, [user]);
 
-  
 
     // Ruta cuando el usuario borra favoritos
     const removeFavorite = async (clienteId, cervezaId) => {

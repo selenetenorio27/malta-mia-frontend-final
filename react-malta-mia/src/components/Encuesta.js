@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './Encuesta.css';
 import './EncuestaBackground.css';
 import MugAnimation from './MugAnimation';
+import confetti from 'canvas-confetti';
 
 const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const { t } = useTranslation();
@@ -151,6 +152,11 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
   const handleEncuestaSubmit = () => {
     onSubmit(respuestas);
     setEncuestaCompletada(true);
+    confetti({
+      particleCount: 100, // Número de confetis
+      spread: 70, // Área de dispersión
+      origin: { y: 0.6 }, // Origen vertical del confeti (0.6 significa desde arriba)
+    });
     setShowMugAnimation(true);
   };
 
