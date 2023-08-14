@@ -6,10 +6,12 @@ import { Link, Navigate } from 'react-router-dom';
 import AuthDetails from './authDetails';
 import './FavoritosBackground.css';
 import './Favoritos.css';
+import { useTranslation } from 'react-i18next';
 import SignIn from './auth/SignIn';
 
 
 const Favoritos = () => {
+    const { t } = useTranslation();
     const auth = getAuth();
     const [user] = useAuthState(auth);
     const [userFavorites, setUserFavorites] = useState([]);
@@ -84,14 +86,14 @@ const Favoritos = () => {
         <>
   <AuthDetails/>
       </>
-        <h2 className="favoritos-text">Tus Favoritos</h2>
+        <h2 className="favoritos-text">{t('Your.favorites')}</h2>
   <div className="favoritos-content">
     {!user && showSignInOverlay ? (
       <div className="overlay">
               <p>
-                Para ver tus favoritos debes{' '}
-                <Link to="/signin">iniciar sesión</Link> o{' '}
-                <Link to="/signup">crear una cuenta</Link>.
+                {t('For.see.favorites')}{' '}
+                <Link to="/signin">{t('sign.in')}</Link> {t('or')}{' '}
+                <Link to="/signup">{t('sign.up')}</Link>.
               </p>
             </div>
           ) : null}
@@ -101,9 +103,12 @@ const Favoritos = () => {
          {userFavorites.map((cerveza) => (
                 <li key={cerveza.cerveza_id} className="favoritos-item">
                   <h3>{cerveza.nombre}</h3>
+                  <p>{t('Style')} {cerveza.estilo}</p>
+              <p>IBU: {cerveza.ibus}</p>
+              <p>{t('Alcohol.level')} {cerveza.porcentaje_alcohol}</p>
                   {/* ...otros detalles de la cerveza... */}
                   <button onClick={() => removeFavorite(user.email, cerveza.cerveza_id)}>
-                    Remove from Favorites
+                  {t('Remove.favorite')}
                   </button>
                 </li>
               ))}

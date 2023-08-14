@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {auth} from '../firebaseConfig';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const AuthDetails = () => {
+  const { t } = useTranslation();
   
     const [authUser, setAuthUser] = useState(null);
 
@@ -36,10 +38,10 @@ const AuthDetails = () => {
           {authUser ? (
             <>
               <p>{`Hola ${authUser.email}`}</p>
-              <button onClick={userSignOut}>Sign Out</button>
+              <button onClick={userSignOut}>{t('Sign.out')}</button>
             </>
           ) : (
-            <p>Signed Out</p>
+            <p>{t('Signed.out')}</p>
           )}
         </div>
       );

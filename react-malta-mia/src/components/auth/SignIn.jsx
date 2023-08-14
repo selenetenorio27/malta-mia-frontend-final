@@ -3,10 +3,12 @@ import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 
 const SignIn = () => {
+  const { t } = useTranslation();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -42,23 +44,23 @@ const SignIn = () => {
       <div className="sign-in-overlay">
         <div className="sign-in-form">
           <div className="sign-in-text">
-            <h2>Log In</h2>
+            <h2>{t('Log.in')}</h2>
           </div>
           <form onSubmit={signIn}>
             <div className="input-group">
-              <label>Email</label>
+              <label>{t('email')}</label>
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('enter.email')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="input-group">
-              <label>Password</label>
+              <label>{t('password')}</label>
               <input
                 type="password"
-                placeholder="Password"
+                placeholder={t('enter.password')}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
