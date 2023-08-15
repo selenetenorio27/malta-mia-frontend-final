@@ -60,15 +60,15 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
           onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
           noOverlay={true}
         >
-              <Link to="/">{t('Home')}</Link>
+            <Link to="/" onClick={() => setMenuOpen(false)}>{t('Home')}</Link>
 
-              <Link to="/acerca-de">{t('About')}</Link>
+            <Link to="/acerca-de" onClick={() => setMenuOpen(false)}>{t('About')}</Link>
 
-            <Link to="/encuesta" onClick={handleEncuestaClick}>{t('Survey')}</Link>
+            <Link to="/encuesta" onClick={() => { setMenuOpen(false); handleEncuestaClick(); }}>{t('Survey')}</Link>
 
-            <Link to="/nuestros-productos">{t('Products')}</Link>
+            <Link to="/nuestros-productos" onClick={() => setMenuOpen(false)}>{t('Products')}</Link>
 
-            <Link to="/favoritos">{t('Favorites')}</Link>
+            <Link to="/favoritos" onClick={() => setMenuOpen(false)}>{t('Favorites')}</Link>
   
         </Menu>
       </div>
