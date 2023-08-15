@@ -144,12 +144,27 @@
 
 
 
+
   .bm-burger-button {
     position: relative;
     width: 36px;
     height: 30px;
     top: 20px;
-    margin-left: 20px; /* Ajusta el margen izquierdo según tus preferencias */
+    margin-left: 0px;
+    background: transparent;
+    border: none;
+  }
+
+  .bm-burger-button-transparent {
+    position: absolute;
+    width: 60px; /* Ajusta el ancho según tus preferencias */
+    height: 60px; /* Ajusta la altura según tus preferencias */
+    top: 20px;
+    left: -10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
   }
   
   /* Estilos para el contenedor del menú */

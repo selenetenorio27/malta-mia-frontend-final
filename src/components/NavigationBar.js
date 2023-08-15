@@ -17,6 +17,8 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
     const handleEncuestaClick = () => {
       onEncuestaLinkClick(); // Llama a la función para reiniciar la encuesta y la recomendación
     };
+
+    
   
     return (
       <nav className='navigationBar'>
@@ -39,7 +41,19 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
       </button>
     </div>
       <div className="menu-container">
-  
+
+        {/* Boton transparente */}
+      <button
+        className="bm-burger-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+      </button>
+      <button
+        className="bm-burger-button-transparent"
+        onClick={() => setMenuOpen(!menuOpen)}
+      ></button>
+
+      {/* Boton Burger que se visualiza */}
         <Menu
           left
           isOpen={menuOpen}
