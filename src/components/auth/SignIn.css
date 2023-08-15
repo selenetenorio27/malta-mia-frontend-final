@@ -27,7 +27,7 @@
   }
   
   .sign-in-logo img {
-    max-width: 70%; /* Ajusta el tamaño máximo de la imagen según tus preferencias */
+    max-width: 90%; 
     height: auto;
   }
   
@@ -97,5 +97,5 @@
   align-items: center;
   padding: 20px;
   border-radius: 5px;
-  margin-top: 90px;
+  margin-top: 70px;
 }
