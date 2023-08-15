@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { auth } from '../../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './SignUpBackground.css';
+import './SignUp.css';
 
 
 const SignUp = () => {
@@ -9,11 +10,27 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
 
 
+  const disableScroll = () => {
+    // Calcula el ancho del scrollbar para evitar que la página se desplace
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  };
+  
+  const enableScroll = () => {
+    document.body.style.overflow = 'auto';
+    document.body.style.paddingRight = '0';
+  };
+
+
   useEffect(() => {
     document.body.classList.add('sign-up-page');
+    disableScroll();
   
     return () => {
       document.body.classList.remove('sign-up-page');
+      document.body.style.overflow = 'auto';
+      enableScroll();
     };
   }, []);
 
@@ -31,7 +48,7 @@ const SignUp = () => {
 
   return (
     <div className="sign-in-container">
-      <form onSubmit={signUp}> 
+      <form onSubmit={signUp} className="signup-form">
         <h1>Create Account</h1>
         <input
           type="email"
