@@ -39,14 +39,14 @@ const SignIn = () => {
 
   return (
     <div className="sign-in-container">
+      <div className="sign-in-text">
+            <h2>{t('Log.in')}</h2>
+          </div>
       <div className="sign-in-logo">
         <img src="/assets/beercap.png" alt="Logo" />
       </div>
       <div className="sign-in-overlay">
         <div className="sign-in-form">
-          <div className="sign-in-text">
-            <h2>{t('Log.in')}</h2>
-          </div>
           <form onSubmit={signIn}>
             <div className="input-group">
               <label>{t('email')}</label>

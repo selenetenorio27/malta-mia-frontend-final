@@ -1,18 +1,20 @@
 .sign-in-text {
   position: absolute;
-  top: 141px;
-  left: 50px;
+  top: 150px; 
+  left: 50%; 
+  transform: translateX(-50%);
   background-color: white;
   padding: 10px 20px;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   color: black;
   border-radius: 5px;
   font-family: 'Insanibc', sans-serif;
-  width: 135px;
-  height: 80px;
-  display: flex; /* Agrega esta propiedad */
-  align-items: center; /* Agrega esta propiedad */
+  width: 270px;
+  height: 50px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
 }
   
   
@@ -25,7 +27,7 @@
   }
   
   .sign-in-logo img {
-    max-width: 65%; /* Ajusta el tamaño máximo de la imagen según tus preferencias */
+    max-width: 70%; /* Ajusta el tamaño máximo de la imagen según tus preferencias */
     height: auto;
   }
   
@@ -54,9 +56,9 @@
   }
   
   .sign-in-form input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 12px;
   }
   
   .sign-in-form button {
@@ -86,4 +88,14 @@
 .login-message a {
   color: #007bff; /* Cambia el color del enlace */
   text-decoration: underline; /* Agrega subrayado al enlace */
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px; 
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 90px;
 }
