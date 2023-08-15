@@ -97,7 +97,7 @@ const Inicio = () => {
             <img src="assets/viva.jpg" alt="Banner 1" />
           </div>
           <div>
-            <img src="assets/vicky.jpg" alt="Banner 2" />
+            <img src="assets/cervezas2.jpg" alt="Banner 2" />
           </div>
           <div>
             <img src="assets/varias2.jpg" alt="Banner 2" />
