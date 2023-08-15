@@ -1,0 +1,12 @@
+body.sign-up-page {
+    background-image: url('/public/assets/empty.jpg');
+    background-attachment: fixed;
+    background-size: 100% auto; /* Ajusta los valores según sea necesario */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

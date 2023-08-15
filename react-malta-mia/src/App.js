@@ -109,7 +109,7 @@ const Inicio = () => {
         <GoogleMapsSection />
       </div>
 
-      {/* Nueva sección */}
+
       <div className="black-section">
         <div className="left-section">
           <h3>{t('Hours')}</h3>

@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { auth } from '../../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import './SignUpBackground.css';
 
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+
+  useEffect(() => {
+    document.body.classList.add('sign-up-page');
+  
+    return () => {
+      document.body.classList.remove('sign-up-page');
+    };
+  }, []);
+
 
   const signUp = (e) => {
     e.preventDefault();
@@ -20,7 +31,7 @@ const SignUp = () => {
 
   return (
     <div className="sign-in-container">
-      <form onSubmit={signUp}> {/* Aquí se corrige */}
+      <form onSubmit={signUp}> 
         <h1>Create Account</h1>
         <input
           type="email"
