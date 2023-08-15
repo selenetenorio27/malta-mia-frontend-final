@@ -142,3 +142,43 @@
   }
 
 
+
+
+  .bm-burger-button {
+    position: relative;
+    width: 36px;
+    height: 30px;
+    top: 20px;
+    margin-left: 20px; /* Ajusta el margen izquierdo según tus preferencias */
+  }
+  
+  /* Estilos para el contenedor del menú */
+  .menu-container {
+    position: fixed;
+    top: 10px; /* Ajusta la posición vertical según tus preferencias */
+    right: 20px; /* Ajusta la posición horizontal según tus preferencias */
+    z-index: 10; /* Asegúrate de que el valor del z-index sea adecuado */
+    cursor: pointer;
+    justify-content: flex-start;
+    width: 80%;
+  }
+
+  .bm-burger-bars {
+    background: #333; /* Cambia el color de las barras según tus preferencias */
+  }
+
+
+
+
+  .bm-menu a {
+    display: block;
+    padding: 15px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.bm-menu a:hover {
+    color: goldenrod; /* Cambia el color al pasar el mouse por encima */
+}

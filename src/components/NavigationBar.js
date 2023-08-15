@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { slide as Menu } from 'react-burger-menu';
 import './NavigationBar.css';
 
 
 
 const NavigationBar = ({ onEncuestaLinkClick }) => {
     const { t, i18n } = useTranslation();
+    const [menuOpen, setMenuOpen] = useState(false);
   
     const handleLanguageChange = (language) => {
       i18n.changeLanguage(language);
@@ -28,32 +30,32 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
       <div className="logo-container">
         <img src='/assets/pruebaLogo.png' alt="Logo" className="logo-image" />
       </div>
-        <div className="NavigationBarContainer">
-          <ul className="menu">
-            <li>
+      <div className="menu-container">
+  
+        <Menu
+          left
+          isOpen={menuOpen}
+          onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+        >
               <Link to="/">{t('Home')}</Link>
-            </li>
-            <li>
+
               <Link to="/acerca-de">{t('About')}</Link>
-            </li>
-            <li>
+
             <Link to="/encuesta" onClick={handleEncuestaClick}>{t('Survey')}</Link>
-            </li>
-            <li>
-              <Link to="/nuestros-productos">{t('Products')}</Link>
-            </li>
-            <li>
-              <Link to="/favoritos">{t('Favorites')}</Link>
-            </li>
+
+            <Link to="/nuestros-productos">{t('Products')}</Link>
+
+            <Link to="/favoritos">{t('Favorites')}</Link>
+  
             <li>
               <button className="button-52" onClick={() => handleLanguageChange('en')}>{t('English')}</button>
               <button className="button-52" onClick={() => handleLanguageChange('es')}>{t('Spanish')}</button>
             </li>
-          </ul>
-        </div>
-      </nav>
-    );
-  };
+        </Menu>
+      </div>
+    </nav>
+  );
+};
   
   export default NavigationBar;
   
