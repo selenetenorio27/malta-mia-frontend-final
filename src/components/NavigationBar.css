@@ -120,8 +120,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    /* Otros estilos del botón que encontraste */
-    /* ... */
+    
   }
   
   .button-52:after {
@@ -134,6 +133,7 @@
     top: 7px;
     left: 7px;
     transition: 0.2s;
+    
   }
   
   .button-52:hover:after {
@@ -164,19 +164,25 @@
   }
 
   .bm-burger-bars {
-    background: #333; /* Cambia el color de las barras según tus preferencias */
+    background: #333; 
+    z-index: 20;
   }
 
 
+  /* .bm-menu {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+} */
 
 
-  .bm-menu a {
-    display: block;
-    padding: 15px 0;
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
+.bm-menu a {
+  display: block;
+  padding: 60px 45px 18px; 
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
 }
 
 .bm-menu a:hover {
