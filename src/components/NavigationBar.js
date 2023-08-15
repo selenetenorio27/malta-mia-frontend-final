@@ -30,6 +30,14 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
       <div className="logo-container">
         <img src='/assets/pruebaLogo.png' alt="Logo" className="logo-image" />
       </div>
+      <div className="language-buttons">
+      <button className="button-52" onClick={() => handleLanguageChange('en')}>
+        {t('English')}
+      </button>
+      <button className="button-52" onClick={() => handleLanguageChange('es')}>
+        {t('Spanish')}
+      </button>
+    </div>
       <div className="menu-container">
   
         <Menu
@@ -47,10 +55,6 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
 
             <Link to="/favoritos">{t('Favorites')}</Link>
   
-            <li>
-              <button className="button-52" onClick={() => handleLanguageChange('en')}>{t('English')}</button>
-              <button className="button-52" onClick={() => handleLanguageChange('es')}>{t('Spanish')}</button>
-            </li>
         </Menu>
       </div>
     </nav>
