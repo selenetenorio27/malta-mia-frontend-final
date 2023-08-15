@@ -147,10 +147,10 @@
 
   .bm-burger-button {
     position: relative;
-    width: 36px;
+    width: 33px;
     height: 30px;
-    top: 20px;
-    margin-left: 0px;
+    top: 5px;
+    margin-left: -70px;
     background: transparent;
     border: none;
   }
@@ -158,9 +158,9 @@
   .bm-burger-button-transparent {
     position: absolute;
     width: 60px; /* Ajusta el ancho según tus preferencias */
-    height: 60px; /* Ajusta la altura según tus preferencias */
+    height: 80px; /* Ajusta la altura según tus preferencias */
     top: 20px;
-    left: -10px;
+    left: -83px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -193,7 +193,7 @@
 
 .bm-menu a {
   display: block;
-  padding: 60px 45px 18px; 
+  padding: 40px 45px 10px;  
   color: #333;
   text-decoration: none;
   font-size: 18px;
@@ -201,5 +201,7 @@
 }
 
 .bm-menu a:hover {
-    color: goldenrod; /* Cambia el color al pasar el mouse por encima */
+    color: purple; /* Cambia el color al pasar el mouse por encima */
 }
+
+
