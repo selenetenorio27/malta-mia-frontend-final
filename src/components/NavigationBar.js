@@ -58,6 +58,7 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
           left
           isOpen={menuOpen}
           onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+          noOverlay={true}
         >
               <Link to="/">{t('Home')}</Link>
 

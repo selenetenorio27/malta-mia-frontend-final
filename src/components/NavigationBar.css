@@ -194,14 +194,14 @@
 .bm-menu a {
   display: block;
   padding: 40px 45px 10px;  
-  color: #333;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s ease-in-out;
 }
 
 .bm-menu a:hover {
-    color: purple; /* Cambia el color al pasar el mouse por encima */
+    color: #007bff; /* Cambia el color al pasar el mouse por encima */
 }
 
 .bm-menu {
@@ -209,5 +209,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+
+
+
 
 
