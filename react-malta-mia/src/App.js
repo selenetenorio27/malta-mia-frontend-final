@@ -45,7 +45,7 @@ const App= () => {
   };
   
   useEffect(() => {
-    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;;
+    const apiKey = 'AIzaSyAmaglOBMnXfiKkPMGadioN9Q8imFe54Ig';
     const maltaMiaCoords = { lat: 19.2845458984375, lng: -99.16448974609375 }; // Coordenadas de Malta Mia
     const maltaMiaAddress = 'Calz. de Tlalpan 4915-Local 1A, Tlalpan Centro II, Tlalpan, 14000 Ciudad de México, CDMX, México';
     const script = document.createElement('script');
