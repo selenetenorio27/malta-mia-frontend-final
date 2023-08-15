@@ -105,7 +105,7 @@ const Inicio = () => {
         </Carousel>
       </div>
 
-      <div className="sections-container">
+      <div id="malta-mia-map" className="sections-container">
         <GoogleMapsSection />
       </div>
 
