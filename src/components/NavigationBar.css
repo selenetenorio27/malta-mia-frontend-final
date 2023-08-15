@@ -161,7 +161,7 @@
     height: 80px; /* Ajusta la altura según tus preferencias */
     top: 20px;
     left: -53px;
-    background: black;
+    background: transparent;
     border: none;
     cursor: pointer;
     z-index: 20;
