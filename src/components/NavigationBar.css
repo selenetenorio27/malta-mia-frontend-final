@@ -150,7 +150,7 @@
     width: 33px;
     height: 30px;
     top: 5px;
-    margin-left: -70px;
+    margin-left: -40px;
     background: transparent;
     border: none;
   }
@@ -160,8 +160,8 @@
     width: 60px; /* Ajusta el ancho según tus preferencias */
     height: 80px; /* Ajusta la altura según tus preferencias */
     top: 20px;
-    left: -83px;
-    background: transparent;
+    left: -53px;
+    background: black;
     border: none;
     cursor: pointer;
     z-index: 20;
@@ -202,6 +202,12 @@
 
 .bm-menu a:hover {
     color: purple; /* Cambia el color al pasar el mouse por encima */
+}
+
+.bm-menu {
+  background-color: rgba(0, 0, 0, 0.8); /* Ajusta el valor de opacidad según tus preferencias */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 
