@@ -1,8 +1,9 @@
-body.encuesta-page {
+.encuesta-page {
     background-image: url('/public/assets/Back.jpg'); 
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    max-width: 100%;
     min-height: 100vh;
     margin: 0;
     padding: 0;

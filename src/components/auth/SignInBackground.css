@@ -1,4 +1,4 @@
-body.favoritos-page {
+.favoritos-page {
     background-image: url('/public/assets/wood.jpeg');
     background-attachment: fixed;
     background-size: 100% auto; /* Ajusta los valores según sea necesario */

@@ -1,4 +1,4 @@
-body.sign-up-page {
+.sign-up-page {
     background-image: url('/public/assets/empty.jpg');
     background-attachment: fixed;
     background-size: 100% auto; /* Ajusta los valores según sea necesario */

@@ -15,26 +15,11 @@ const SignIn = () => {
   const navigate = useNavigate();
 
 
-  const disableScroll = () => {
-    // Calcula el ancho del scrollbar para evitar que la página se desplace
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-  };
-  
-  const enableScroll = () => {
-    document.body.style.overflow = 'auto';
-    document.body.style.paddingRight = '0';
-  };
-
-
   useEffect(() => {
     document.body.classList.add('favoritos-page');
-    disableScroll();
   
     return () => {
       document.body.classList.remove('favoritos-page');
-      enableScroll();
     };
   }, []);
 
