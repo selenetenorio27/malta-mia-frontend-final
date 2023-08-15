@@ -105,13 +105,17 @@
   .language-buttons {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 20;
   }
   
   .button-52 {
-    font-size: 14px; /* Ajusta el tamaño de fuente según tus preferencias */
+    font-size: 16px; 
+    font-family: 'revert';
+    font-weight: bold;
     font-weight: 200;
     letter-spacing: 1px;
-    padding: 8px 15px; /* Ajusta el padding (espaciado interno) según tus preferencias */
+    padding: 8px 15px; 
     outline: 0;
     border: 1px solid black;
     cursor: pointer;
@@ -120,6 +124,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    color: black;
     
   }
   
