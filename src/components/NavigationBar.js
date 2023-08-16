@@ -4,12 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { slide as Menu } from 'react-burger-menu';
 import './NavigationBar.css';
 import AuthDetails from './authDetails';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebaseConfig.js'; 
 
 
 
 const NavigationBar = ({ onEncuestaLinkClick }) => {
     const { t, i18n } = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
+    let [user] = useAuthState(auth);
   
     const handleLanguageChange = (language) => {
       i18n.changeLanguage(language);
@@ -31,7 +34,7 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
         </svg>
       </div>
       {/* <div className="auth-details-container"> */}
-      <AuthDetails />
+      {user && <AuthDetails />}
       {/* </div> */}
       <div className="logo-container">
         <img src='/assets/pruebaLogo.png' alt="Logo" className="logo-image" />
