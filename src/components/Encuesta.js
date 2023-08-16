@@ -208,9 +208,11 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
             ))}
           </ul>
           <div className="button-container">
+          {currentPage > 0 && ( 
           <button class="button_back" disabled={currentPage === 0} onClick={handlePreviousClick}>
           {t('Back')}
           </button>
+          )}
           {currentPage < preguntas.length - 1 ? (
             <button class="button_next" onClick={handleNextClick}>{t('Next')}</button>
           ) : (
