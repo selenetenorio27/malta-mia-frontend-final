@@ -1,5 +1,5 @@
 .sign-up-page {
-    background-image: url('/public/assets/empty.jpg');
+    background-color: rgb(252, 195, 50);
     background-attachment: fixed;
     background-size: 100% auto; /* Ajusta los valores según sea necesario */
     background-repeat: no-repeat;
