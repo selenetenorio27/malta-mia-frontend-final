@@ -67,7 +67,7 @@ const App= () => {
       <NavigationBar onEncuestaLinkClick={handleNavigationBarEncuestaClick}/>
         </div>
         <Routes>
-          <Route path="/" element={<Inicio />} />
+          <Route path="/" element={<Inicio onEncuestaButtonClick={handleNavigationBarEncuestaClick}/>} />
           <Route path="/acerca-de" element={<AcercaDe />} />
           <Route
             path="/encuesta"
@@ -94,14 +94,20 @@ const App= () => {
   );
 };
 
-const Inicio = () => {
+const Inicio = ({ onEncuestaButtonClick }) => {
   const { t } = useTranslation();
+
+  const handleFloatingButtonClick = () => {
+    onEncuestaButtonClick();
+  };
 
   return (
     <div className="inicio-container">
 
       <img src="assets/MaltaMiaLogo.png" alt="Logo de tu web app" className="logo" />
-      <Link to="/encuesta" className="floating-button"> 🍺 {t('floatingButton')}</Link>
+      <Link to="/encuesta" className="floating-button" onClick={handleFloatingButtonClick}>
+        🍺 {t('floatingButton')}
+      </Link>
 
       {/* Carrusel de fotos */}
       <div className="carousel-container">
