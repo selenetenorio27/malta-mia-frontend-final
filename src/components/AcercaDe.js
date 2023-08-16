@@ -25,7 +25,7 @@ const AcercaDe = () => {
       <div className="founders-section">
         <img className="founders-image" src="/assets/cer2.jpg" alt="Founders" />
         <h3 className="founder-name">{t('foundedBy')}</h3>
-        <p className="founder-description">{t('passion')}</p>
+        <p className="founder-description">{t('beers.togo')}</p>
       </div>
       
       <div className="passion-section">
