@@ -1,0 +1,31 @@
+.nuestros-productos-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .imagen {
+    max-height: 200px;
+    overflow: hidden;
+  }
+  
+  .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .descripcion p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #333;
+  }

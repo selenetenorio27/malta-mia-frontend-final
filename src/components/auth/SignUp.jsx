@@ -3,9 +3,11 @@ import { auth } from '../../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './SignUpBackground.css';
 import './SignUp.css';
+import { useTranslation } from 'react-i18next';
 
 
 const SignUp = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -35,20 +37,20 @@ const SignUp = () => {
   return (
     <div className="sign-in-container">
       <form onSubmit={signUp} className="signup-form">
-        <h1>Create Account</h1>
+        <h1>{t('Sign.up')}</h1>
         <input
-          type="email"
-          placeholder="Enter your email"
+          type={t('email')}
+          placeholder={t('enter.email')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type="password"
-          placeholder="password"
+          type={t('password')}
+          placeholder={t('password')}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit">{t('Sign.up')}</button>
       </form>
     </div>
   );
