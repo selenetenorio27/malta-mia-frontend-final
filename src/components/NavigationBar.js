@@ -19,7 +19,7 @@ const NavigationBar = ({ onEncuestaLinkClick }) => {
     };
 
     const handleEncuestaClick = () => {
-      onEncuestaLinkClick(); // Llama a la función para reiniciar la encuesta y la recomendación
+      onEncuestaLinkClick(); // función para reiniciar la encuesta y la recomendación
     };
 
     

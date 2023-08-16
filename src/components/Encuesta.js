@@ -196,7 +196,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
                 <label>
                   <input
                     type="radio"
-                    name={preguntaActual.id} // radiobutton + contador
+                    name={preguntaActual.id} 
                     value={opcion.id}
                     checked={respuestas[preguntaActual.id] === opcion.id}
                     onChange={(e) => handleInputChange(preguntaActual.id, e.target.value)}
@@ -204,7 +204,6 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
                   {opcion.texto}
                 </label>
               </li>
-              //contador++
             ))}
           </ul>
           <div className="button-container">

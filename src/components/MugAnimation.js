@@ -1,5 +1,5 @@
 import React from 'react';
-import './MugAnimation.css'; // Importa los estilos CSS específicos para esta animación
+import './MugAnimation.css'; 
 
 const MugAnimation = () => {
   return (

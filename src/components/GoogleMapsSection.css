@@ -1,12 +1,12 @@
 .map-container {
     display: flex;
-    flex-direction: column; /* Cambia la dirección de la flexión para apilar los elementos uno encima del otro */
-    align-items: center; /* Centra los elementos horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
     margin-top: 60px;
   }
   
   .address-container {
-    width: 60%; /*Ajustar el ancho de la foto del local*/
+    width: 60%; 
     padding: 10px;
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -21,10 +21,10 @@
   #map {
     height: 300px;
     width: 100%;
-    margin-right: 10px; /* Agrega un margen derecho para separarlo del cuadro de dirección */
+    margin-right: 10px; 
   }
 
   .address-image {
-    width: 100%; /* Ajusta el ancho de la imagen según lo desees */
-    height: auto; /* Para mantener la proporción */
+    width: 100%; 
+    height: auto; 
   }

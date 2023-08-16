@@ -34,7 +34,7 @@ const Favoritos = () => {
       const fetchUserFavorites = async () => {
         if (user) {
           try {
-            // GET al backend para obtener las cervezas favoritas
+            
             const response = await axios.get(
               `https://malta-mia-api.onrender.com/favoritos/${user.email}`,
               {

@@ -9,7 +9,7 @@ const GoogleMapsSection = () => {
     const maltaMiaAddress = 'Calz. de Tlalpan 4915-Local 1A, Tlalpan Centro II, Tlalpan, 14000 Ciudad de México, CDMX, México';
 
 
-    //window.initMap = () => {
+  
       const mapOptions = {
         center: { lat: 19.2845458984375, lng: -99.16448974609375 },
         zoom: 14,
