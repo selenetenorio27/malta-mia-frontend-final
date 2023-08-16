@@ -12,14 +12,14 @@ html {
 
 .inicio-container {
   text-align: center;
-  margin-top: 50px; /* Ajusta el margen superior según lo desees */
+  margin-top: 50px; 
 }
 
 /* Estilos para el logo */
 .logo {
-  width: 350px; /* Ajusta el ancho del logo según lo desees */
-  height: auto; /* Para mantener la proporción */
-  margin-bottom: 60px; /* Lo que separa el logo del carrusel de fotos */
+  width: 350px; 
+  height: auto; 
+  margin-bottom: 60px; 
 }
 
 
@@ -36,7 +36,7 @@ html {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), /* Sombra normal */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 
               0px 0px 10px white; /* Destello blanco al hacer hover */
   z-index: 2;
 
@@ -70,8 +70,8 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 30px; /* Ajusta el margen superior según lo desees */
-  margin-bottom: 30px; /* Agrega margen inferior */
+  margin-top: 30px; 
+  margin-bottom: 30px; 
 }
 
 .black-section h3 {
@@ -92,25 +92,23 @@ html {
 
 /* Estilos para la sección de la izquierda */
 .left-section {
-  margin-right: 20px; /* Espacio entre los elementos izquierdo y derecho */
+  margin-right: 20px; 
 }
 
-/* .right-section {
-  text-align: right;
-} */
+
 
 
 
 /* Carrusel de foto */
 .carousel-container {
-  margin-top: 90px; /* Ajusta el margen superior que desees */
-  max-width: 600px; /* Define el ancho máximo del carrusel */
+  margin-top: 90px; 
+  max-width: 600px; 
   margin: 0 auto;
 }
 
 .carousel .slide img {
-  max-height: 500px; /* Define la altura máxima de las imágenes */
-  object-fit: contain; /* Ajusta el tamaño de las imágenes para que entren dentro del contenedor */
+  max-height: 500px; 
+  object-fit: contain; 
 }
 
 
