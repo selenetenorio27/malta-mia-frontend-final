@@ -1,0 +1,13 @@
+.about-page {
+    background-color: rgb(252, 195, 50);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+  }
