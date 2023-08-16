@@ -28,7 +28,7 @@ const App= () => {
 
   let [user] = useAuthState(auth);
 
-
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
   useEffect(() => {
     // Llamada al backend para obtener datos de cervezas
