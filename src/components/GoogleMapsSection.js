@@ -17,7 +17,7 @@ const GoogleMapsSection = () => {
 
       const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
 
-      // Agregar el marcador en las coordenadas de Malta Mia
+
       const marker = new window.google.maps.Marker({
         position: maltaMiaCoords,
         map: map,
@@ -28,14 +28,14 @@ const GoogleMapsSection = () => {
         },
       });
 
-      // Crear el cuadro de dirección
+
       const addressBox = new window.google.maps.InfoWindow({
         content: `<div class="address-box">${maltaMiaAddress}</div>`,
       });
 
-      // Mostrar el cuadro de dirección al cargar el mapa
+
       addressBox.open(map, marker);
-    //};
+
   }, []);
 
   

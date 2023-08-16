@@ -28,7 +28,7 @@
 }
 
 .encuesta-content-container p {
-  max-width: 400px; /* Ajusta el ancho máximo según tu diseño */
+  max-width: 350px; /* ancho máximo */
   word-wrap: break-word;
 }
 
@@ -146,8 +146,8 @@
 /* Separar boton back de next */
 .button-container {
   display: flex;
-  gap: 10px; /* Ajusta el espacio horizontal entre los botones */
-  margin-top: 10px; /* Ajusta el espacio entre los botones y el contenido de la encuesta */
+  gap: 10px; 
+  margin-top: 10px; 
 }
 
 

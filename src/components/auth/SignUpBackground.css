@@ -1,7 +1,7 @@
 .sign-up-page {
     background-color: rgb(252, 195, 50);
     background-attachment: fixed;
-    background-size: 100% auto; /* Ajusta los valores según sea necesario */
+    background-size: 100% auto; 
     background-repeat: no-repeat;
     min-height: 100vh;
     margin: 0;

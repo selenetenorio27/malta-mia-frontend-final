@@ -6,9 +6,9 @@
   }
   
   .product-description p {
-    color: white;  /* Color del texto blanco */
-    text-align: left; /* Alineación del texto a la izquierda */
-    font-size: 16px; /* Tamaño de fuente */
+    color: white;  
+    text-align: left; 
+    font-size: 16px; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   

@@ -22,8 +22,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 200px); /* Ajusta la altura del contenedor según tus preferencias */
-    margin-top: 50px; /* Ajusta la separación superior del logo */
+    height: calc(100vh - 200px); 
+    margin-top: 50px; 
   }
   
   .sign-in-logo img {
@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Asegura que esté encima del fondo */
+    z-index: 1; 
   }
   
 
@@ -79,15 +79,15 @@
   color: white;
   text-align: center;
   font-size: 18px;
-  z-index: 3; /* Asegura que esté sobre el fondo */
-  font-size: 24px; /* Aumenta el tamaño del texto */
-  padding: 30px; /* Aumenta el espacio alrededor del texto */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra al texto */
+  z-index: 3; 
+  font-size: 24px; 
+  padding: 30px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .login-message a {
-  color: #007bff; /* Cambia el color del enlace */
-  text-decoration: underline; /* Agrega subrayado al enlace */
+  color: #007bff; 
+  text-decoration: underline; 
 }
 
 .sign-in-form {
