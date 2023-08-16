@@ -82,9 +82,9 @@ const Favoritos = () => {
 
     return (
       <div className={`favoritos-container favoritos-page ${!user ? 'no-scroll' : ''}`}>
-        <>
+        {/* <>
   <AuthDetails/>
-      </>
+      </> */}
         <h2 className="favoritos-text">{t('Your.favorites')}</h2>
   <div className="favoritos-content">
     {!user && showSignInOverlay ? (
