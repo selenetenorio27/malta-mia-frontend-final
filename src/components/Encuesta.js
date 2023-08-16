@@ -93,7 +93,6 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
         { id: 'citric', texto: t('survey.optionCitrico')},
         { id: 'intense_bitter', texto: t('survey.optionAmargoIntenso')},
         { id: 'none', texto: t('survey.optionNinguno')}
-        // anadir ninguno o none
       ],
     },
     {
@@ -123,7 +122,7 @@ const Encuesta = ({ onSubmit, onRestart, encuestaRespuestas }) => {
 
 
   useEffect(() => {
-    // Al cargar el componente, mostramos automáticamente la pregunta 1.
+    // Al cargar el componente, se muestra automáticamente la pregunta 1.
     setCurrentPage(0);
     setEncuestaCompletada(false);
   }, []);
