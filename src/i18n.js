@@ -14,8 +14,8 @@ i18n
         translation: esTranslation,
       }
     },
-    lng: 'es', // Idioma predeterminado
-    fallbackLng: 'es', // Idioma de respaldo si el idioma seleccionado no tiene traducciones disponibles
+    lng: 'en', // Idioma predeterminado
+    fallbackLng: 'en', // Idioma de respaldo si el idioma seleccionado no tiene traducciones disponibles
     interpolation: {
       escapeValue: false // Permitir el uso de HTML en las traducciones
     }
