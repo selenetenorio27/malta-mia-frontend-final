@@ -135,6 +135,7 @@
   margin-left: -40px;
   background: transparent;
   border: black;
+  z-index: 20;
 }
 
 .bm-burger-button-transparent {
@@ -158,6 +159,7 @@
   cursor: pointer;
   justify-content: flex-start;
   width: 80%;
+  z-index: 1000;
 }
 
 .bm-burger-bars {
@@ -174,6 +176,7 @@
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s ease-in-out;
+  z-index: 40;
 }
 
 .bm-menu a:hover {
@@ -184,6 +187,7 @@
   background-color: rgba(0, 0, 0, 0.8); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  z-index: 1000; 
 }
 
 
