@@ -57,10 +57,10 @@
   /* Estilos para cada cerveza en la lista */
   border: 1px solid #ddd;
   padding: 10px;
-  margin: 10px 0;
+  margin: 25px 0;
   background-color: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  max-width: 250px; /* largo horizontal */
+  max-width: 220px; /* largo horizontal */
 }
 
 .favoritos-item button {
@@ -88,7 +88,7 @@
 
 .auth-details-container,
 .favoritos-list-container {
-  margin: 20px auto; /* Margen vertical 20px y centrado horizontal */
+  margin: 20px auto; 
 }
 
 .favoritos-content {
@@ -98,31 +98,39 @@
 
 .favoritos-list-container {
   margin-top: 200px; 
-  margin-left: 60px; /* Agrega un margen izquierdo para mover la lista hacia la derecha */
+  margin-left: 60px; 
 }
+
+
 
 .auth-details-container {
   position: absolute;
-  top: 157px; /* posición vertical */
-  right: 93px; /* posición horizontal */
-  background-color: white;
-  padding: 10px 5px;
-  font-size: 18px;
-  color: black;
+  top: 53px;
+  right: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
   border-radius: 5px;
-  font-family: 'Insanibc', sans-serif;
-  z-index: 3; 
-}
-
-.auth-details-container {
-  position: absolute;
-  top: 10px; 
-  right: 90px; 
-  background-color: white;
-  padding: 0px 5px;
-  font-size: 13px;
-  color: black;
-  border-radius: 5px;
-  font-family: 'Insanibc', sans-serif;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
   z-index: 3;
+}
+
+.user-welcome {
+  text-align: right;
+}
+
+.user-email {
+  margin: 0;
+  font-weight: bold;
+}
+
+.sign-out-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 5px;
+  border-radius: 3px;
 }

@@ -50,7 +50,7 @@ const App= () => {
     <Router>
       <div>
       <div className="nav-container">
-      <NavigationBar onEncuestaLinkClick={handleNavigationBarEncuestaClick} />
+      <NavigationBar onEncuestaLinkClick={handleNavigationBarEncuestaClick}/>
         </div>
         <Routes>
           <Route path="/" element={<Inicio />} />

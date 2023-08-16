@@ -10,12 +10,13 @@ import { useTranslation } from 'react-i18next';
 import SignIn from './auth/SignIn';
 
 
+
 const Favoritos = () => {
     const { t } = useTranslation();
     const auth = getAuth();
     const [user] = useAuthState(auth);
     const [userFavorites, setUserFavorites] = useState([]);
-    const [showSignInOverlay, setShowSignInOverlay] = useState(true);
+    const [showSignInOverlay, setShowSignInOverlay] = useState(true); 
 
 
     useEffect(() => {
@@ -25,6 +26,7 @@ const Favoritos = () => {
         document.body.classList.remove('favoritos-page');
       };
     }, []);
+
 
 
     // Ruta para obtener favoritos

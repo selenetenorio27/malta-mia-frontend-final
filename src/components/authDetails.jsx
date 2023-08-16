@@ -36,12 +36,14 @@ const AuthDetails = () => {
       return (
         <div className="auth-details-container">
           {authUser ? (
-            <>
-              <p>{`Hola ${authUser.email}`}</p>
-              <button onClick={userSignOut}>{t('Sign.out')}</button>
-            </>
+            <div className="user-welcome">
+              <p className="user-email">{`Hola ${authUser.email}`}</p>
+              <button className="sign-out-button" onClick={userSignOut}>
+                {t('Sign.out')}
+              </button>
+            </div>
           ) : (
-            <p>{t('Signed.out')}</p>
+            <p className="signed-out-message">{t('Signed.out')}</p>
           )}
         </div>
       );
