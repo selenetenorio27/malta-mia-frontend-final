@@ -37,7 +37,7 @@ const AuthDetails = () => {
         <div className="auth-details-container">
           {authUser ? (
             <div className="user-welcome">
-              <p className="user-email">{`Hola ${authUser.email}`}</p>
+              <p className="user-email">{`${t('Hi')} ${authUser.email}`}</p>
               <button className="sign-out-button" onClick={userSignOut}>
                 {t('Sign.out')}
               </button>
