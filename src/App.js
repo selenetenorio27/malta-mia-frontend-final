@@ -114,13 +114,16 @@ const Inicio = ({ onEncuestaButtonClick }) => {
         <Carousel showThumbs={false} showStatus={false} infiniteLoop autoPlay>
           {/* Diapositivas del carrusel */}
           <div>
-            <img src="assets/viva.jpg" alt="Banner 1" />
+            <img src="assets/Heineken.jpg" alt="Banner 1" />
           </div>
           <div>
-            <img src="assets/cervezas2.jpg" alt="Banner 2" />
+            <img src="assets/Vicky.jpg" alt="Banner 2" />
           </div>
           <div>
             <img src="assets/varias2.jpg" alt="Banner 2" />
+          </div>
+          <div>
+            <img src="assets/viva.jpg" alt="Banner 2" />
           </div>
         </Carousel>
       </div>

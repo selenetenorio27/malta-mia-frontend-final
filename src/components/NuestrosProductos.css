@@ -1,31 +1,110 @@
+
 .nuestros-productos-container {
-    display: flex;
-    gap: 20px;
-    margin: 20px;
-  }
-  
-  .producto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    gap: 10px;
+  }
+
+  .product-description p {
+    color: white;  /* Color del texto blanco */
+    text-align: left; /* Alineación del texto a la izquierda */
+    font-size: 16px; /* Tamaño de fuente */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .product-title {
+    color:rgb(252, 195, 50);  
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+    font-family:fantasy;
+    font-size: 24px;
   }
   
-  .imagen {
-    max-height: 200px;
-    overflow: hidden;
+  .product-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
   }
   
-  .imagen img {
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-description {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;;
+  }
+  
+  .carousel-root {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
   }
   
-  .descripcion p {
-    font-size: 18px;
-    line-height: 1.4;
+  .carousel.carousel-slider {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .carousel .slider-wrapper {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel .slider-wrapper.axis-horizontal .slider {
+    display: flex;
+  }
+  
+  .carousel .slider {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: all 0.5s;
+  }
+  
+  .carousel .slider-slide {
+    min-width: 100%;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+  }
+  
+  .carousel .control-arrow {
+    font-size: 24px;
     color: #333;
+    background: transparent;
+  }
+  
+  .carousel .control-arrow:hover {
+    color: #000;
+  }
+  
+  .carousel .thumbs-wrapper {
+    display: none;
+  }
+  
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .product-slide {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .product-image img {
+      margin-bottom: 20px;
+    }
+  
+    .product-description {
+      padding: 0;
+    }
   }
