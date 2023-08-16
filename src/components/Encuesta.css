@@ -27,12 +27,17 @@
   font-family: 'Insanibc', sans-serif
 }
 
-
+.encuesta-content-container p {
+  max-width: 300px; /* Ajusta el ancho máximo según tu diseño */
+  word-wrap: break-word;
+}
 
 
   .encuesta-content-container {
     margin-left: 20px; 
   }
+
+
 
 
 /* Boton Back*/
