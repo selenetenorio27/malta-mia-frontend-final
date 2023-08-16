@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { getAuth } from 'firebase/auth';
 
 
-const Recomendacion = ({ encuestaRespuestas }) => {
+const Recomendacion = ({ encuestaRespuestas, beerData }) => {
   const { t } = useTranslation();
   const auth = getAuth();
   const [user] = useAuthState(auth);
@@ -15,23 +15,12 @@ const Recomendacion = ({ encuestaRespuestas }) => {
 
 
   useEffect(() => {
-    if (!encuestaRespuestas) return;
-      const apiUrl = 'https://malta-mia-api.onrender.com/cervezas';
-    
-      axios
-        .get(apiUrl)
-        .then((response) => {
-          const beerData = response.data;
-          const cervezasFiltradas = filtrarCervezas(beerData);
-          setCervezasFiltradas(cervezasFiltradas);
-        })
-        .catch((error) => {
-          console.error('Error fetching beer data:', error);
-        });
-  }, [encuestaRespuestas]);
+    if (!encuestaRespuestas || !beerData) return;
 
-
-  
+    const cervezasFiltradas = filtrarCervezas(beerData);
+    setCervezasFiltradas(cervezasFiltradas);
+  }, [encuestaRespuestas, beerData]);
+      
 
   const filtrarCervezas = (beerData) => {
     if (!encuestaRespuestas || !beerData) {

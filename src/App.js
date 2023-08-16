@@ -8,7 +8,7 @@ import Encuesta from './components/Encuesta';
 import NuestrosProductos from './components/NuestrosProductos';
 import Recomendacion from './components/Recomendacion';
 import Favoritos from './components/Favoritos';
-// import axios from 'axios';
+import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig.js'; 
 import { useTranslation } from 'react-i18next';
@@ -24,8 +24,22 @@ import './App.css'
 const App= () => {
   const [encuestaRespuestas, setEncuestaRespuestas] = useState(null);
   const [mostrarRecomendacion, setMostrarRecomendacion] = useState(false);
+  const [beerData, setBeerData] = useState([]);
 
   let [user] = useAuthState(auth);
+
+
+
+  useEffect(() => {
+    // Llamada al backend para obtener datos de cervezas
+    axios.get('https://malta-mia-api.onrender.com/cervezas')
+      .then((response) => {
+        setBeerData(response.data); // Almacena los datos en el estado
+      })
+      .catch((error) => {
+        console.error('Error fetching beer data:', error);
+      });
+  }, []);
 
 
   const handleEncuestaSubmit = (respuestas) => {
@@ -65,7 +79,7 @@ const App= () => {
                 encuestaRespuestas={encuestaRespuestas}
               />
               {mostrarRecomendacion && (
-                <Recomendacion encuestaRespuestas={encuestaRespuestas} />
+                <Recomendacion encuestaRespuestas={encuestaRespuestas} beerData={beerData}/>
               )}
             </>
             }
