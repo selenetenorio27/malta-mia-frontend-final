@@ -38,13 +38,16 @@ const Recomendacion = ({ encuestaRespuestas, beerData }) => {
       } else if (encuestaRespuestas.ibuPreference === 'high') {
         cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ibus > 50);
       }
-    } else if (encuestaRespuestas.hasTriedCraftBeer === 'yes') {
+      } else if (encuestaRespuestas.hasTriedCraftBeer === 'yes' && encuestaRespuestas.beerStyle !== 'experimentar') {
       // Filtrar por estilo según respuesta a la pregunta 2
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.estilo === encuestaRespuestas.beerStyle);
     }
 
+
     // Filtrar por sabor según respuesta a la pregunta 4
+    if (encuestaRespuestas.flavorPreference !== 'no_matter') {
     cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.sabor.includes(encuestaRespuestas.flavorPreference));
+    }
 
     // Filtrar por nivel de alcohol según respuesta a la pregunta 5
     if (encuestaRespuestas.alcoholPreference === 'low') {
@@ -55,7 +58,7 @@ const Recomendacion = ({ encuestaRespuestas, beerData }) => {
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.porcentaje_alcohol > 6);
     }
     // Filtrar por ingrediente adicional según respuesta a la pregunta 6
-    if (encuestaRespuestas.additionalIngredientPreference !== 'none') {
+    if (encuestaRespuestas.additionalIngredientPreference !== 'none' && encuestaRespuestas.additionalIngredientPreference !== 'indiferente') {
       cervezasFiltradas = cervezasFiltradas.filter((cerveza) => cerveza.ingrediente_adicional.includes(encuestaRespuestas.additionalIngredientPreference));
     }
 

@@ -93,7 +93,8 @@
     "survey.optionLigero": "light and refreshing",
     "survey.optionCitrico": "citric",
     "survey.optionAmargoIntenso": "intense bitter",
-    "survey.optionNinguno": "it does not matter to me",
+    "survey.optionNinguno": "none",
+    "survey.option.Nomatter":"it does not matter to me",
   
     "survey.question5": "5. What is your preferred alcohol level?",
     "survey.optionAlcoholLow": "Low (less than 4%)",
