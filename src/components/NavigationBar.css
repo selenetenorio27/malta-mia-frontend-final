@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 20;
+    z-index: 2000;
   }
   
 .button-52 {
@@ -147,7 +147,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 40;
+  z-index: 1000;
 }
   
   /* Estilos para el contenedor del menú */
@@ -176,7 +176,6 @@
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s ease-in-out;
-  z-index: 40;
 }
 
 .bm-menu a:hover {
@@ -187,7 +186,6 @@
   background-color: rgba(0, 0, 0, 0.8); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  z-index: 1000; 
 }
 
 
