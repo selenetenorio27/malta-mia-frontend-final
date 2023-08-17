@@ -26,8 +26,6 @@ const App= () => {
   const [mostrarRecomendacion, setMostrarRecomendacion] = useState(false);
   const [beerData, setBeerData] = useState([]);
 
-  const [currentPage, setCurrentPage] = useState(0);
-
   let [user] = useAuthState(auth);
 
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -66,9 +64,7 @@ const App= () => {
     <Router>
       <div>
       <div className="nav-container">
-      <NavigationBar onEncuestaLinkClick={handleNavigationBarEncuestaClick}
-                    onRestart={handleRestartEncuesta}
-                    currentPage={currentPage}/>
+      <NavigationBar onEncuestaLinkClick={handleNavigationBarEncuestaClick}/>
         </div>
         <Routes>
           <Route path="/" element={<Inicio onEncuestaButtonClick={handleNavigationBarEncuestaClick}/>} />

@@ -9,7 +9,7 @@ import { auth } from '../firebaseConfig.js';
 
 
 
-const NavigationBar = ({ onEncuestaLinkClick, onRestart, currentPage }) => {
+const NavigationBar = ({ onEncuestaLinkClick }) => {
     const { t, i18n } = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
     let [user] = useAuthState(auth);
@@ -20,7 +20,6 @@ const NavigationBar = ({ onEncuestaLinkClick, onRestart, currentPage }) => {
 
     const handleEncuestaClick = () => {
       onEncuestaLinkClick(); // función para reiniciar la encuesta y la recomendación
-      onRestart();
     };
 
     
